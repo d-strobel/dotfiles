@@ -12,7 +12,7 @@ Repository for personal dotfiles.
 | starship | Command prompt | [starship.rs](https://starship.rs/) | ~/.config/starship.toml |
 | neovim | Code editor | [neovim.io](https://neovim.io/) | ~/.config/nvim |
 
-### Usage
+## Usage
 
 * Clone the git repository
 * Symlink the config files to their config destination (see overview table)
