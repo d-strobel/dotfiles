@@ -10,6 +10,7 @@ Repository for personal dotfiles.
 | tmux | Terminal multiplexer | [github.com/tmux/tmux/wiki](https://github.com/tmux/tmux/wiki) |
 | fish | Shell | [fishshell.com](https://fishshell.com/) |
 | starship | Command prompt | [starship.rs](https://starship.rs/) |
+| neovim | Code editor | [neovim.io](https://neovim.io/) |
 
 ## Usage
 
