@@ -4,7 +4,7 @@ Repository for personal dotfiles.
 
 ## Overview
 
-| Tool | Description | Website | Destination |
+| Tool | Description | Website | Config |
 | ---- | ----------- | ------- | ----------- |
 | alacritty | Terminal emulator | [alacritty.org](https://alacritty.org/) | ~/.config/alacritty/alacritty.toml |
 | tmux | Terminal multiplexer | [github.com/tmux/tmux/wiki](https://github.com/tmux/tmux/wiki) | ~/.tmux.conf |
@@ -15,4 +15,4 @@ Repository for personal dotfiles.
 ### Usage
 
 * Clone the git repository
-* Symlink the config files to their destination (see overview table)
+* Symlink the config files to their config destination (see overview table)
