@@ -1,7 +1,5 @@
 format = """
-$username\
-@$hostname\
-$directory\
+$username@$hostname$directory\
 $git_branch\
 $golang\
 $terraform\
@@ -15,40 +13,32 @@ $character
 # Set the timeout for command execution
 command_timeout=2000
 
-# Set to true to avoid a two-line prompt
-[line_break]
-disabled = false
-
-# Set disabled to true when using a one-line prompt for more aesthetically pleasing results
-[character]
-success_symbol = '[└─>](bold green)'
-error_symbol = '[└─>](bold red)'
-format = '$symbol '
-disabled = false
-
+# User + hostname + directory
 [username]
-style_user = "fg:2"
-style_root = "red bold"
-format="[$user]($style)"
+style_user = 'fg:green'
+style_root = 'fg:red'
+format='[$user]($style)'
 show_always = true
 disabled = false
 
 [hostname]
 ssh_only = false
-format = "[$hostname](cyan) "
+format = '[$hostname](cyan)'
 disabled = false
 
 [directory]
-style = 'fg:#39466b'
-format = '[\[ $path \] ]($style)'
+style = 'fg:#87dde5'
+format = '[ \[ $path \]]($style) '
 truncation_length = 6
 truncation_symbol = '…/'
 
+# Version control system
 [git_branch]
 symbol = ''
 style = 'purple'
 format = 'on [$symbol $branch ]($style)'
 
+# Languages
 [golang]
 symbol = ''
 style = 'fg:#00ADD8'
@@ -70,10 +60,20 @@ style = 'fg:#7B42BC'
 format = 'via [$symbol ($version) ]($style)'
 
 [custom.ansible]
-symbol = "󱂚"
-description = "Ansible Core version"
-files = [ "ansible.cfg" ]
+symbol = '󱂚'
+description = 'Ansible Core version'
+files = [ 'ansible.cfg' ]
 style = 'red'
-format = "via [$symbol $output]($style) "
+format = 'via [$symbol $output]($style) '
 shell = '/bin/bash'
 command = 'echo -n $(ansible --version 2>/dev/null | grep -oP "(?<=core )[\d\.]+")'
+
+# User input
+[line_break]
+disabled = false
+
+# [character]
+# success_symbol = '[─>](bold green)'
+# error_symbol = '[─>](bold red)'
+# format = '$symbol '
+# disabled = false
