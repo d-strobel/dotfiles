@@ -3,6 +3,7 @@ $username@$hostname$directory\
 $git_branch\
 $golang\
 $terraform\
+${custom.opentofu}\
 $rust\
 $python\
 ${custom.ansible}\
@@ -55,7 +56,17 @@ format = 'via [$symbol]($style) [$version]($style bold) '
 [terraform]
 symbol = '󱁢'
 style = 'fg:#7B42BC'
+detect_extensions = []
 format = 'via [$symbol]($style) [$version]($style bold) '
+
+[custom.opentofu]
+symbol = ''
+description = 'OpenTofu version'
+style = 'fg:#fce307'
+format = 'via [$symbol]($style) [$output]($style bold) '
+detect_folders = ['.tofu']
+shell = '/bin/bash'
+command = 'echo -n $(tofu version 2>/dev/null | grep OpenTofu | grep -oP "v\K[0-9.]+")'
 
 [custom.ansible]
 symbol = '󱂚'
