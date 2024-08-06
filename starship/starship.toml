@@ -62,7 +62,7 @@ format = 'via [$symbol]($style) [$version]($style bold) '
 [custom.ansible]
 symbol = '󱂚'
 description = 'Ansible Core version'
-files = [ 'ansible.cfg' ]
+detect_files = ['ansible.cfg']
 style = 'red'
 format = 'via [$symbol]($style) [$output]($style bold) '
 shell = '/bin/bash'
