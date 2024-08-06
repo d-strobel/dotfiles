@@ -29,8 +29,6 @@ disabled = false
 [directory]
 style = 'fg:#87dde5 bold'
 format = '[ \[ $path \]]($style) '
-# truncation_length = 6
-# truncation_symbol = '…/'
 
 # Version control system
 [git_branch]
