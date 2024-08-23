@@ -49,8 +49,8 @@ style = 'yellow'
 format = 'via [$symbol]($style) [$version]($style bold) '
 
 [rust]
-symbol = ''
-style = 'fg:#2C3E50'
+symbol = ''
+style = 'fg:#ce4b0a'
 format = 'via [$symbol]($style) [$version]($style bold) '
 
 [terraform]
