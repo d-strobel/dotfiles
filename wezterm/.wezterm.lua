@@ -1,0 +1,45 @@
+-- Pull in the wezterm API
+local wezterm = require 'wezterm'
+local config = wezterm.config_builder()
+
+-- Wayland
+config.enable_wayland = true
+
+-- Font
+config.font = wezterm.font 'JetBrains Mono'
+
+-- Color scheme
+-- config.color_scheme = 'catppuccin-mocha'
+
+-- Keymaps
+config.disable_default_key_bindings = true
+config.keys = {}
+
+-- Window decorations
+config.enable_tab_bar = false
+config.window_decorations = 'RESIZE'
+
+-- Window padding
+config.window_padding = {
+  left = 10,
+  right = 10,
+  top = 5,
+  bottom = 5,
+}
+
+-- Window opacity
+config.window_background_opacity = 1.0
+
+-- Color gradient black and grey
+config.window_background_gradient = {
+  orientation = 'Vertical',
+  colors = {
+    '#000000',
+    '#131314',
+  },
+  interpolation = 'Linear',
+  blend = 'Rgb',
+}
+
+-- Return the configuration to wezterm
+return config
