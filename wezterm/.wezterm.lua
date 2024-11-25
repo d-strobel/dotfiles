@@ -14,6 +14,33 @@ config.font = wezterm.font 'JetBrains Mono'
 -- Keymaps
 config.disable_default_key_bindings = true
 config.keys = {}
+config.keys = {
+  {
+    key = '+',
+    mods = 'CTRL',
+    action = wezterm.action.IncreaseFontSize,
+  },
+  {
+    key = '-',
+    mods = 'CTRL',
+    action = wezterm.action.DecreaseFontSize,
+  },
+  {
+    key = '0',
+    mods = 'CTRL',
+    action = wezterm.action.ResetFontSize,
+  },
+  {
+    key = 'c',
+    mods = 'CTRL+SHIFT',
+    action = wezterm.action.CopyTo('Clipboard'),
+  },
+  {
+    key = 'v',
+    mods = 'CTRL+SHIFT',
+    action = wezterm.action.PasteFrom('Clipboard'),
+  },
+}
 
 -- Window decorations
 config.enable_tab_bar = false
