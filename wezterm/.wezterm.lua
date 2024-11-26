@@ -13,7 +13,6 @@ config.font = wezterm.font 'DroidSansM Nerd Font'
 
 -- Keymaps
 config.disable_default_key_bindings = true
-config.keys = {}
 config.keys = {
   {
     key = '+',
@@ -32,12 +31,12 @@ config.keys = {
   },
   {
     key = 'c',
-    mods = 'CTRL+SHIFT',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.CopyTo('Clipboard'),
   },
   {
     key = 'v',
-    mods = 'CTRL+SHIFT',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.PasteFrom('Clipboard'),
   },
 }
