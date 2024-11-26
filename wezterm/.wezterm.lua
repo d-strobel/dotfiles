@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 config.enable_wayland = true
 
 -- Font
-config.font = wezterm.font 'JetBrains Mono'
+config.font = wezterm.font 'DroidSansM Nerd Font'
 
 -- Color scheme
 -- config.color_scheme = 'catppuccin-mocha'
