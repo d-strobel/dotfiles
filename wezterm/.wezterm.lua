@@ -50,7 +50,7 @@ config.window_padding = {
   left = 10,
   right = 10,
   top = 5,
-  bottom = 5,
+  bottom = 1,
 }
 
 -- Window opacity
