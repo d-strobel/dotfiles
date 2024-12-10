@@ -54,7 +54,7 @@ config.window_padding = {
 }
 
 -- Window opacity
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.99
 
 -- Color gradient black and grey
 config.window_background_gradient = {
