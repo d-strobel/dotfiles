@@ -9,7 +9,7 @@ config.enable_wayland = true
 config.font = wezterm.font 'DroidSansM Nerd Font'
 
 -- Color scheme
--- config.color_scheme = 'catppuccin-mocha'
+config.color_scheme = 'Catppuccin Mocha'
 
 -- Keymaps
 config.disable_default_key_bindings = true
@@ -56,12 +56,12 @@ config.window_padding = {
 -- Window opacity
 config.window_background_opacity = 0.99
 
--- Color gradient black and grey
+-- Color gradient
 config.window_background_gradient = {
   orientation = 'Vertical',
   colors = {
-    '#000000',
-    '#191719',
+    '#101016',
+    '#151521',
   },
   interpolation = 'Linear',
   blend = 'Rgb',
