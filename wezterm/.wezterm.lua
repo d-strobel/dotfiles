@@ -9,7 +9,7 @@ config.enable_wayland = true
 config.font = wezterm.font 'DroidSansM Nerd Font'
 
 -- Color scheme
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'rose-pine'
 
 -- Keymaps
 config.disable_default_key_bindings = true
