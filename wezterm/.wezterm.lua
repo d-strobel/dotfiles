@@ -61,7 +61,7 @@ config.window_background_gradient = {
   orientation = 'Vertical',
   colors = {
     '#101016',
-    '#151521',
+    '#151021',
   },
   interpolation = 'Linear',
   blend = 'Rgb',
