@@ -12,7 +12,7 @@ return {
             package_pending = "➜",
             package_uninstalled = "✗",
           },
-          border = "rounded"
+          border = "single"
         },
 
         -- list of servers for mason to install
@@ -119,35 +119,6 @@ return {
       -- Python lsp config
       lspconfig["pylsp"].setup({
         capabilities = capabilities,
-      })
-
-      -- OnAttach functions
-      vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then return end
-
-          -- Format on save
-          if client.supports_method('textDocument/formatting') then
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = args.buf,
-              callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-              end,
-            })
-          end
-
-          -- Inlay hints
-          if client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            -- Enable by default
-            vim.lsp.inlay_hint.enable(true)
-
-            -- Keymap for toggle
-            vim.keymap.set("n", '<leader>ih', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end)
-          end
-        end
       })
     end,
   },
