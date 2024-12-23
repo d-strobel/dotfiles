@@ -1,5 +1,5 @@
 format = """
-$username@$hostname$directory\
+$directory\
 $git_branch\
 $golang\
 $terraform\
@@ -14,22 +14,10 @@ $character
 # Set the timeout for command execution
 command_timeout=2000
 
-# User + hostname + directory
-[username]
-style_user = 'fg:green'
-style_root = 'fg:red'
-format='[$user]($style)'
-show_always = true
-disabled = false
-
-[hostname]
-ssh_only = false
-format = '[$hostname](cyan)'
-disabled = false
-
+# Directory
 [directory]
-style = 'fg:#87dde5 bold'
-format = '[ \[ $path \]]($style) '
+style = 'fg:cyan bold'
+format = '[$path]($style) '
 
 # Version control system
 [git_branch]
