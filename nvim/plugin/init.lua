@@ -49,3 +49,13 @@ vim.diagnostic.config({
     border = 'single',
   },
 })
+
+-- Filetypes
+vim.filetype.add({
+  extension = {
+    tf = "terraform",
+    tfvars = "terraform",
+    tfbackend = "config",
+    tfstate = "json",
+  }
+})
