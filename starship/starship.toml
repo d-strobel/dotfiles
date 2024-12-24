@@ -16,7 +16,7 @@ command_timeout=2000
 
 # Directory
 [directory]
-style = 'fg:cyan bold'
+style = 'fg:#87dde5 bold'
 format = '[$path]($style) '
 
 # Version control system
