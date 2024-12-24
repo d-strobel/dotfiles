@@ -53,9 +53,13 @@ vim.diagnostic.config({
 -- Filetypes
 vim.filetype.add({
   extension = {
+    -- Terraform
     tf = "terraform",
     tfvars = "terraform",
     tfbackend = "config",
     tfstate = "json",
+    -- Systemd
+    service = "systemd",
+    timer = "systemd",
   }
 })
