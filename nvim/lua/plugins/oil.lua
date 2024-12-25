@@ -1,8 +1,12 @@
 return {
   {
     "stevearc/oil.nvim",
+    lazy = true,
     dependencies = {
       "nvim-tree/nvim-web-devicons",
+    },
+    keys = {
+      { "<space>e", "<cmd>Oil<cr>" }
     },
     config = function()
       require("oil").setup({
@@ -22,8 +26,6 @@ return {
           show_hidden = true,
         },
       })
-
-      vim.keymap.set("n", "<space>e", "<CMD>Oil<CR>")
     end,
   },
 }
