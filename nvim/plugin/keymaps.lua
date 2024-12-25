@@ -46,3 +46,19 @@ keymap.set('n', '<leader>qk', '<cmd>cprev<CR>zz')
 
 -- Diagnostics
 keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+
+-- Autopairs in insert mode
+keymap.set("i", "(", "()<left>")
+keymap.set("i", "[", "[]<left>")
+keymap.set("i", "{", "{}<left>")
+keymap.set("i", "<", "<><left>")
+keymap.set("i", "\"", "\"\"<left>")
+keymap.set("i", "'", "''<left>")
+
+-- Autopairs in visual mode
+keymap.set("v", "(", "c()<Esc>P<right>")
+keymap.set("v", "[", "c[]<Esc>P<right>")
+keymap.set("v", "{", "c{}<Esc>P<right>")
+keymap.set("v", "<", "c<><Esc>P<right>")
+keymap.set("v", "\"", "c\"\"<Esc>P<right>")
+keymap.set("v", "'", "c''<Esc>P<right>")
