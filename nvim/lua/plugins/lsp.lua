@@ -90,35 +90,72 @@ return {
         capabilities = capabilities,
         bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
       })
-
       -- JSON lsp config
       lspconfig["jsonls"].setup({
         capabilities = capabilities,
       })
-
       -- Dockerfile lsp config
       lspconfig["dockerls"].setup({
         capabilities = capabilities,
       })
-
       -- HTML lsp config
       lspconfig["html"].setup({
         capabilities = capabilities,
       })
-      --
       -- HTMX lsp config
       lspconfig["htmx"].setup({
         capabilities = capabilities,
       })
-
       -- Tailwind CSS lsp config
       lspconfig["tailwindcss"].setup({
         capabilities = capabilities,
       })
-
       -- Python lsp config
       lspconfig["pylsp"].setup({
         capabilities = capabilities,
+      })
+      -- Yaml
+      lspconfig["yamlls"].setup({
+        capabilities = capabilities,
+        settings = {
+          yaml = {
+            schemas = {
+              -- Kubernetes
+              kubernetes = "*.manifest.{yml,yaml}",
+              ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+              ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+              ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] =
+              "*flow*.{yml,yaml}",
+              -- Github
+              ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+              ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+              ["https://json.schemastore.org/dependabot-2.0"] = ".github/dependabot.{yml,yaml}",
+              -- Gitlab
+              ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] =
+              "*gitlab-ci*.{yml,yaml}",
+              -- Azure
+              ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] =
+              "azure-pipelines*.{yml,yaml}",
+              -- Ansible
+              ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] =
+              "tasks/*.{yml,yaml}",
+              ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] =
+              "*{play,site}*.{yml,yaml}",
+              -- OpenAPI
+              ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] =
+              "*api*.{yml,yaml}",
+              -- Docker
+              ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
+              "*docker-compose*.{yml,yaml}",
+              -- Go
+              ["https://golangci-lint.run/jsonschema/golangci.jsonschema.json"] = ".golangci.{yml,yaml}",
+              -- Prometheus
+              ["https://json.schemastore.org/prometheus.json"] = "prometheus.{yml.yaml}",
+              ["https://json.schemastore.org/prometheus.rules.json"] = "*.rules.{yml,yaml}",
+              ["https://json.schemastore.org/prometheus.rules.test.json"] = "*.tests.{yml,yaml}",
+            },
+          }
+        }
       })
     end,
   },
