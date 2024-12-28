@@ -45,8 +45,8 @@ keymap("n", "<leader>qo", "<cmd>copen<CR>")
 keymap("n", "<leader>qc", "<cmd>cclose<CR>")
 
 -- Remap cnext and cprev for quickfix lists
-keymap('n', '<leader>qj', '<cmd>cnext<CR>zz')
-keymap('n', '<leader>qk', '<cmd>cprev<CR>zz')
+keymap('n', '<M-n>', '<cmd>cnext<CR>zz')
+keymap('n', '<M-p>', '<cmd>cprev<CR>zz')
 
 -- Autopairs in insert mode
 keymap("i", "(", "()<left>")
