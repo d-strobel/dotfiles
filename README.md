@@ -6,7 +6,7 @@ Repository for personal dotfiles.
 
 | Tool | Description | Website | Config |
 | ---- | ----------- | ------- | ----------- |
-| wezterm | Terminal emulator | [wezterm.org](https://wezfurlong.org/wezterm/index.html) | ~/.wezterm.lua |
+| ghostty | Terminal emulator | [ghostty.org](https://ghostty.org) | ~/ghostty/config |
 | tmux | Terminal multiplexer | [github.com/tmux/tmux/wiki](https://github.com/tmux/tmux/wiki) | ~/.tmux.conf |
 | fish | Shell | [fishshell.com](https://fishshell.com/) | ~/.config/fish/config.fish |
 | starship | Command prompt | [starship.rs](https://starship.rs/) | ~/.config/starship.toml |

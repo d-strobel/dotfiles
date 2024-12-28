@@ -1,0 +1,15 @@
+# Theme and colors
+theme = rose-pine
+cursor-invert-fg-bg = true
+background = #131021
+background-opacity = 0.99
+
+# Window
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 5,1
+
+# Disable ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
