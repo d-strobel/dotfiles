@@ -16,7 +16,7 @@ api.nvim_create_autocmd('LspAttach', {
     if not client then return end
 
     -- Format on save
-    if client.supports_method('textDocument/formatting') then
+    if client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
       api.nvim_create_autocmd('BufWritePre', {
         buffer = args.buf,
         callback = function()
