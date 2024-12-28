@@ -6,6 +6,10 @@ keymap('n', '<ESC>', '<cmd>nohlsearch<cr>')
 -- Disable space in normal mode
 keymap("n", "<Space>", "<Nop>")
 
+-- keep visual selection when (de)indenting
+keymap("v", "<", "<gv")
+keymap("v", ">", ">gv")
+
 -- Move multilines in visual mode
 keymap("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
