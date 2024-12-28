@@ -48,9 +48,6 @@ keymap("n", "<leader>qc", "<cmd>cclose<CR>")
 keymap('n', '<leader>qj', '<cmd>cnext<CR>zz')
 keymap('n', '<leader>qk', '<cmd>cprev<CR>zz')
 
--- Diagnostics
-keymap("n", "<leader>d", vim.diagnostic.open_float)
-
 -- Autopairs in insert mode
 keymap("i", "(", "()<left>")
 keymap("i", "[", "[]<left>")
