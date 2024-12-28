@@ -35,6 +35,18 @@ api.nvim_create_autocmd('LspAttach', {
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end)
     end
+
+    -- Organize Imports
+    if client.supports_method(vim.lsp.protocol.Methods.textDocument_codeAction) then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        callback = function()
+          vim.lsp.buf.code_action {
+            context = { only = { "source.organizeImports" } },
+            apply = true,
+          }
+        end
+      })
+    end
   end
 })
 
