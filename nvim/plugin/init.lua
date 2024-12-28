@@ -15,6 +15,15 @@ api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if not client then return end
 
+    -- Keymaps
+    local keymap = vim.keymap.set
+    keymap("n", "gd", vim.lsp.buf.definition)
+    keymap("n", "grn", vim.lsp.buf.rename)
+    keymap("n", "grr", vim.lsp.buf.references)
+    keymap("n", "gra", vim.lsp.buf.code_action)
+    keymap("n", "gri", vim.lsp.buf.implementation)
+    keymap("n", "gO", vim.lsp.buf.document_symbol)
+
     -- Format on save
     if client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
       api.nvim_create_autocmd('BufWritePre', {
