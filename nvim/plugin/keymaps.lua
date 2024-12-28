@@ -45,7 +45,7 @@ keymap("n", "<leader>qr", ":cdo :%s/")
 keymap("n", "<leader>qR", ":cfdo :%s/")
 
 -- Open Quickfix list
-keymap("n", "<leader>qo", "<cmd>copen<CR>")
+keymap("n", "<leader>qq", "<cmd>copen<CR>")
 keymap("n", "<leader>qc", "<cmd>cclose<CR>")
 
 -- Remap cnext and cprev for quickfix lists
