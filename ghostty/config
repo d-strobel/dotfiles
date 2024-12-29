@@ -13,3 +13,6 @@ window-padding-y = 5,1
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
+
+# Mouse
+mouse-hide-while-typing = true
