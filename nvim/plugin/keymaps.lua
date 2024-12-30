@@ -30,7 +30,7 @@ keymap({ "n", "v" }, "<leader>p", [["+p]])
 keymap("n", "<leader>P", [["+P]])
 
 -- Paste over currently selected text without yanking it
-keymap("v", "p", '"_dp')
+keymap("v", "p", '"_dP')
 keymap("v", "P", '"_dP')
 
 -- Delete to void registry
