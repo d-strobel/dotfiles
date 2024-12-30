@@ -9,7 +9,6 @@ opt.wrap = false
 
 -- Curser line
 opt.cursorline = true
-opt.colorcolumn = "120"
 
 -- Indenting
 opt.tabstop = 2
