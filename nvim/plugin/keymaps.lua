@@ -51,19 +51,3 @@ keymap("n", "<leader>qc", "<cmd>cclose<CR>")
 -- Remap cnext and cprev for quickfix lists
 keymap('n', '<M-n>', '<cmd>cnext<CR>zz')
 keymap('n', '<M-p>', '<cmd>cprev<CR>zz')
-
--- Autopairs in insert mode
-keymap("i", "(", "()<left>")
-keymap("i", "[", "[]<left>")
-keymap("i", "{", "{}<left>")
-keymap("i", "<", "<><left>")
-keymap("i", "\"", "\"\"<left>")
-keymap("i", "'", "''<left>")
-
--- Autopairs in visual mode
-keymap("v", "(", "c()<Esc>P<right>")
-keymap("v", "[", "c[]<Esc>P<right>")
-keymap("v", "{", "c{}<Esc>P<right>")
-keymap("v", "<", "c<><Esc>P<right>")
-keymap("v", "\"", "c\"\"<Esc>P<right>")
-keymap("v", "'", "c''<Esc>P<right>")
