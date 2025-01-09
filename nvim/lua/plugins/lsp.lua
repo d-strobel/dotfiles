@@ -78,7 +78,7 @@ return {
       -- Ansible
       lspconfig["ansiblels"].setup {
         capabilities = capabilities,
-        filetypes = { "yaml", "ansible" }
+        filetypes = { "ansible" },
       }
       -- Terraform
       lspconfig["terraformls"].setup {
