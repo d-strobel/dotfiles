@@ -17,6 +17,7 @@ return {
 
         -- list of servers for mason to install
         ensure_installed = {
+          "bashls",
           "ansiblels",
           "gopls",
           "lua_ls",
