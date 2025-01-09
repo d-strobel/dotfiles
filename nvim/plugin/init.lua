@@ -54,7 +54,11 @@ api.nvim_create_autocmd('LspAttach', {
         vim.api.nvim_create_autocmd("BufWritePre", {
           callback = function()
             vim.lsp.buf.code_action {
-              context = { only = { "source.organizeImports" } },
+              context = {
+                only = { "source.organizeImports" },
+                diagnostics = vim.lsp.diagnostic.get_line_diagnostics(),
+                triggerKind = 2,
+              },
               apply = true,
             }
           end
