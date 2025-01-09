@@ -52,11 +52,12 @@ api.nvim_create_autocmd('LspAttach', {
     if client.supports_method(vim.lsp.protocol.Methods.textDocument_codeAction) then
       if vim.bo.filetype == "go" then
         vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = args.buf,
           callback = function()
             vim.lsp.buf.code_action {
               context = {
                 only = { "source.organizeImports" },
-                diagnostics = vim.lsp.diagnostic.get_line_diagnostics(),
+                diagnostics = vim.diagnostic.get(),
                 triggerKind = 2,
               },
               apply = true,
