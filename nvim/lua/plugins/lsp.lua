@@ -103,14 +103,6 @@ return {
       lspconfig["html"].setup({
         capabilities = capabilities,
       })
-      -- HTMX lsp config
-      lspconfig["htmx"].setup({
-        capabilities = capabilities,
-      })
-      -- Tailwind CSS lsp config
-      lspconfig["tailwindcss"].setup({
-        capabilities = capabilities,
-      })
       -- Python lsp config
       lspconfig["pylsp"].setup({
         capabilities = capabilities,
