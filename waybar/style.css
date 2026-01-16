@@ -1,0 +1,68 @@
+/* Global styling */
+* {
+    font-family: 'JetBrainsMono Nerd Font', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 15px;
+}
+
+/* TODO: Implement colors */
+/* Color definition */
+@define-color bg #2b303b;
+/* @define-color fg #cd974b; */
+/* @define-color white #cecece; */
+/* @define-color yellow #c9b890; */
+
+window#waybar {
+    background-color: @bg;
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #ffffff;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    color: #00ff00;
+}
+#battery.warning {
+    color: #ff9900;
+}
+#battery.critical {
+    color: #ff0000;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#pulseaudio.muted {
+    color: #ff0000;
+}
