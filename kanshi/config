@@ -1,0 +1,22 @@
+output "AU Optronics 0x243D Unknown" {
+  mode 1920x1080@60.031
+  position 0,0
+  scale 1
+  alias $NOTEBOOK
+}
+
+output "Dell Inc. DELL U3425WE 971Q3Z3" {
+  mode 3440x1440@120.00
+  position 0,0
+  scale 1
+  alias $KUEKI_1
+}
+
+profile notebook {
+  output $NOTEBOOK enable
+}
+
+profile kueki {
+  output $NOTEBOOK disable
+  output $KUEKI_1 enable
+}
