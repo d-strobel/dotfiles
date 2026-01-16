@@ -7,9 +7,12 @@ ${custom.opentofu}\
 $rust\
 $python\
 ${custom.ansible}\
-$line_break\
+$nodejs\
+$nix_shell
 $character
 """
+
+right_format = "$time"
 
 # Set the timeout for command execution
 command_timeout=2000
@@ -53,7 +56,7 @@ description = 'OpenTofu version'
 style = 'fg:#fce307'
 format = 'via [$symbol]($style) [$output]($style bold) '
 detect_folders = ['.tofu']
-shell = '/bin/bash'
+shell = '/bin/sh'
 command = 'echo -n $(tofu version 2>/dev/null | grep OpenTofu | grep -oP "v\K[0-9.]+")'
 
 [custom.ansible]
@@ -62,9 +65,21 @@ description = 'Ansible Core version'
 detect_files = ['ansible.cfg']
 style = 'red'
 format = 'via [$symbol]($style) [$output]($style bold) '
-shell = '/bin/bash'
+shell = '/bin/sh'
 command = 'echo -n $(ansible --version 2>/dev/null | grep -oP "(?<=core )[\d\.]+")'
 
-# User input
-[line_break]
+[nodejs]
+symbol = ''
+detect_extensions = ['js', 'cjs', 'ts', 'mts', 'cts']
+style = 'green'
+format = 'via [$symbol]($style) [$version]($style bold) '
+
+[nix_shell]
+symbol = ''
+style = 'fg:#1e90c9'
+format = 'in [$symbol]($style) [$name]($style bold) '
+
+[time]
 disabled = false
+style = 'green'
+format = '[$time]($style)'
