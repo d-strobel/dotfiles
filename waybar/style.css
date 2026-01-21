@@ -1,19 +1,11 @@
-/* Global styling */
 * {
-    font-family: 'JetBrainsMono Nerd Font', 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 15px;
 }
 
-/* TODO: Implement colors */
-/* Color definition */
-@define-color bg #2b303b;
-/* @define-color fg #cd974b; */
-/* @define-color white #cecece; */
-/* @define-color yellow #c9b890; */
-
 window#waybar {
-    background-color: @bg;
-    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 button {
@@ -23,15 +15,16 @@ button {
 
 #workspaces button {
     padding: 0 5px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: rgb(61, 71, 78);
+    border-bottom: 3px solid rgb(100, 114, 125);
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: rgb(235, 77, 75);
 }
 
 #clock,
@@ -46,23 +39,23 @@ button {
 #wireplumber,
 #tray {
     padding: 0 10px;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
 }
 
 #battery.charging, #battery.plugged {
-    color: #00ff00;
+    color: rgb(0, 255, 0);
 }
 #battery.warning {
-    color: #ff9900;
+    color: rgb(255, 125, 0);
 }
 #battery.critical {
-    color: #ff0000;
+    color: rgb(255, 0, 0);
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: rgb(0, 0, 0);
 }
 
 #pulseaudio.muted {
-    color: #ff0000;
+    color: rgb(255, 0, 0);
 }
