@@ -4,7 +4,7 @@ last_session=$(tmux display-message -p '#{client_last_session}')
 sessions=$(tmux list-sessions -F '#{session_name}' | grep -v "^$last_session$")
 
 if [[ -z $last_session ]]; then
-    selected=$(echo "$sessions" | fzf --tmux bottom --border-label=" Sessions ")
+    selected=$(echo "$sessions" | fzf --tmux bottom --border-label=" Tmux Sessions ")
 else
     selected=$(echo -e "$last_session\n$sessions" | fzf --tmux bottom --border-label=" Sessions ")
 fi

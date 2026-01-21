@@ -5,7 +5,7 @@ SEARCH_PATHS="$HOME/git/github.com/d-strobel $HOME/git/github.com/laser-zentrale
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(fd . --type d --max-depth 1 --full-path "$SEARCH_PATHS" | fzf --tmux=bottom --border-label=" Sessionizer ")
+    selected=$(fd . --type d --max-depth 1 --full-path $SEARCH_PATHS | fzf --tmux=bottom --border-label=" Tmux Sessionizer ")
 fi
 
 if [[ -z $selected ]]; then
