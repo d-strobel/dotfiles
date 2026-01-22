@@ -2,6 +2,7 @@
 # Variables
 # -------------------------------
 
+# Set mod to super key
 set $mod Mod4
 
 # Home row direction keys, like vim
@@ -45,6 +46,12 @@ input "1739:0:Synaptics_TM3276-022" {
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
+}
+
+input "1189:32769:BenQ_ZOWIE_BenQ_ZOWIE_Gaming_Mouse" {
+    natural_scroll disabled
+    accel_profile "flat"
+    pointer_accel 0.0
 }
 
 # -------------------------------
@@ -134,41 +141,12 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f fullscreen
 
 # Screenshot and clipboard
-bindsym $mod+Print exec grimshot --notify copy area
-
-# Screenshot and annotation
-bindsym $mod+Shift+Print exec grimshot save area - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/$(date '+%Y%m%d-%H:%M:%S').png
-
-# Toggle the current focus between tiling and floating mode
-# bindsym $mod+Shift+space floating toggle
-
-# Swap focus between the tiling area and the floating area
-# bindsym $mod+space focus mode_toggle
-
-# Move focus to the parent container
-# bindsym $mod+a focus parent
+# bindsym $mod+Print exec grimshot --notify copy area
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d
 #  - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
-#
-# If multiple directories contain the files with the same name, the later
-# directory takes precedence; `$XDG_CONFIG_HOME/sway/config.d/20-swayidle.conf`
-# will always be loaded instead of `/usr/share/sway/config.d/20-swayidle.conf`
-# or `/etc/sway/config.d/20-swayidle.conf`
-#
-# This mechanism permits overriding our default configuration per-system
-# (/etc) or per-user ($XDG_CONFIG_HOME) basis. Just create the file you
-# want to modify/override in the higher-level directory.
-#
-# For example, to disable the default bar from Fedora configs, you'll need to
-#     $ echo -n > "$HOME/.config/sway/config.d/90-bar.conf"
-#
-# Note the quoting, the $() and the arguments quoting. All the parts are equally
-# important to make the magic work. And if you want to learn the secret behind
-# the trick, it's all in the `wordexp(3)`.
-#
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 # Activate network manager
