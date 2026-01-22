@@ -1,0 +1,189 @@
+{
+  "policies": {
+    "DNSOverHTTPS": {
+      "Enabled": true,
+      "Fallback": true,
+      "Locked": true,
+      "ProviderURL": "https://doh.libredns.gr/dns-query"
+    },
+    "DisableAccounts": true,
+    "DisableAppUpdate": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxScreenshots": true,
+    "DisableFirefoxStudies": true,
+    "DisableMasterPasswordCreation": true,
+    "DisablePocket": true,
+    "DisableProfileImport": true,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": "newtab",
+    "DisplayMenuBar": "default-off",
+    "DontCheckDefaultBrowser": true,
+    "EnableTrackingProtection": {
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "Locked": true,
+      "Value": true
+    },
+    "EncryptedMediaExtensions": {
+      "Enabled": true,
+      "Locked": true
+    },
+    "ExtensionSettings": {
+      "*": {
+        "installation_mode": "blocked"
+      },
+      "@testpilot-containers": {
+        "default_area": "menupanel",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/@testpilot-containers/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "addon@darkreader.org": {
+        "default_area": "navbar",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "addon@simplelogin": {
+        "default_area": "navbar",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/addon@simplelogin/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "langpack-de@firefox.mozilla.org": {
+        "install_url": "https://releases.mozilla.org/pub/firefox/releases/146.0.1/linux-x86_64/xpi/de.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "langpack-en-US@firefox.mozilla.org": {
+        "install_url": "https://releases.mozilla.org/pub/firefox/releases/146.0.1/linux-x86_64/xpi/en-US.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "sponsorBlocker@ajay.app": {
+        "default_area": "menupanel",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sponsorBlocker@ajay.app/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "uBlock0@raymondhill.net": {
+        "default_area": "navbar",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": true
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "default_area": "navbar",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/{446900e4-71c2-419f-a6a7-df9c091e268b}/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "{762f9885-5a13-4abd-9c77-433dcd38b8fd}": {
+        "default_area": "menupanel",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/{762f9885-5a13-4abd-9c77-433dcd38b8fd}/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      },
+      "{88ebde3a-4581-4c6b-8019-2a05a9e3e938}": {
+        "default_area": "menupanel",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/{88ebde3a-4581-4c6b-8019-2a05a9e3e938}/latest.xpi",
+        "installation_mode": "force_installed",
+        "private_browsing": false
+      }
+    },
+    "NoDefaultBookmarks": false,
+    "OfferToSaveLoginsDefault": false,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "Preferences": {
+      "browser.contentblocking.category": {
+        "Status": "locked",
+        "Value": "strict"
+      },
+      "browser.formfill.enable": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.feeds.section.topstories": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.feeds.snippets": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.section.highlights.includeBookmarks": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.section.highlights.includeDownloads": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.section.highlights.includePocket": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.section.highlights.includeVisited": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.showSponsored": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.showSponsoredTopSites": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.newtabpage.activity-stream.system.showSponsored": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.search.suggest.enabled": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.search.suggest.enabled.private": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.topsites.contile.enabled": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.translations.automaticallyPopup": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.uiCustomization.state": {
+        "Status": "locked",
+        "Value": "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"_testpilot-containers-browser-action\",\"_88ebde3a-4581-4c6b-8019-2a05a9e3e938_-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\"],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"customizableui-special-spring1\",\"vertical-spacer\",\"urlbar-container\",\"customizableui-special-spring2\",\"downloads-button\",\"fxa-toolbar-menu-button\",\"unified-extensions-button\",\"addon_darkreader_org-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"addon_simplelogin-browser-action\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\",\"reset-pbm-toolbar-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"firefox-view-button\",\"tabbrowser-tabs\",\"new-tab-button\"],\"vertical-tabs\":[],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"addon_darkreader_org-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"screenshot-button\",\"_testpilot-containers-browser-action\",\"addon_simplelogin-browser-action\",\"_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action\",\"_88ebde3a-4581-4c6b-8019-2a05a9e3e938_-browser-action\",\"_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action\",\"reset-pbm-toolbar-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"vertical-tabs\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\",\"unified-extensions-area\"],\"currentVersion\":23,\"newElementCount\":2}"
+      },
+      "browser.uitour.enabled": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.urlbar.showSearchSuggestionsFirst": {
+        "Status": "locked",
+        "Value": false
+      },
+      "browser.urlbar.suggest.searches": {
+        "Status": "locked",
+        "Value": false
+      },
+      "extensions.pocket.enabled": {
+        "Status": "locked",
+        "Value": false
+      },
+      "extensions.screenshots.disabled": {
+        "Status": "locked",
+        "Value": true
+      },
+      "network.protocol-handler.external.mailto": {
+        "Status": "locked",
+        "Value": false
+      }
+    },
+    "SearchBar": "unified"
+  }
+}

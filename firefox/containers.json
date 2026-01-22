@@ -1,0 +1,43 @@
+{
+  "identities": [
+    {
+      "color": "green",
+      "icon": "circle",
+      "name": "Laser",
+      "public": true,
+      "userContextId": 1
+    },
+    {
+      "color": "red",
+      "icon": "circle",
+      "name": "Vault",
+      "public": true,
+      "userContextId": 3
+    },
+    {
+      "color": "yellow",
+      "icon": "circle",
+      "name": "Youtube",
+      "public": true,
+      "userContextId": 2
+    },
+    {
+      "accessKey": "",
+      "color": "",
+      "icon": "",
+      "name": "userContextIdInternal.thumbnail",
+      "public": false,
+      "userContextId": 4294967294
+    },
+    {
+      "accessKey": "",
+      "color": "",
+      "icon": "",
+      "name": "userContextIdInternal.webextStorageLocal",
+      "public": false,
+      "userContextId": 4294967295
+    }
+  ],
+  "lastUserContextId": 3,
+  "version": 5
+}
