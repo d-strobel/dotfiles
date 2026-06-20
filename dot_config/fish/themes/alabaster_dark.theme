@@ -1,0 +1,56 @@
+# vi: set ft=fish :
+
+# name: 'Alabaster Dark'
+# license: 'MIT'
+# preferred_background: 0E1415
+
+# Core colors (Original Alabaster Dark)
+# - #CECECE - Default Text (light gray)
+# - #0E1415 - Background (dark blue black)
+#
+# The 4 semantic colors (Original Alabaster Dark)
+# - #95CB82 - Strings (green)
+# - #CC8BC9 - Valid Filepaths (magenta)
+# - #DFDF8E - Comments (light yellow)
+# - #71ADE7 - Commands (blue)
+#
+# Supporting Colors:
+# - #E25D56 - Errors (red)
+# - #182325 - Selection background (lighter dark blue black)
+# - #777777 - Dimmed (dark gray)
+
+# Syntax highlighting variables
+fish_color_normal CECECE
+fish_color_command 71ADE7
+fish_color_redirection CECECE
+fish_color_end CECECE
+fish_color_operator CECECE
+fish_color_param CECECE
+fish_color_error E25D56
+fish_color_comment DFDF8E
+fish_color_quote 95CB82
+fish_color_cwd CECECE
+fish_color_cwd_root CECECE
+fish_color_valid_path CC8BC9
+fish_color_match --background=182325
+fish_color_selection --background=182325
+fish_color_user CC8BC9
+fish_color_host CC8BC9
+fish_color_escape CECECE
+fish_color_autosuggestion 777777
+fish_color_keyword CECECE
+fish_color_option CECECE
+fish_color_history_current
+fish_color_status E25D56
+fish_color_cancel E25D56 --reverse
+
+# Pager color variables
+fish_pager_color_prefix CECECE
+fish_pager_color_selected_prefix CECECE
+fish_pager_color_completion CECECE
+fish_pager_color_selected_completion CECECE
+fish_pager_color_description DFDF8E
+fish_pager_color_selected_description DFDF8E
+fish_pager_color_progress 777777
+fish_pager_color_background 0E1415
+fish_pager_color_selected_background --background=182325

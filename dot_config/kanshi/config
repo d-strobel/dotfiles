@@ -1,0 +1,133 @@
+# vi: set ft=config :
+
+# -----------------
+# Notebook monitor
+# -----------------
+output "eDP-1" {
+  mode 1920x1080@60.031
+  position 0,0
+  scale 1
+  alias $NOTEBOOK
+}
+
+# -----------------
+# External monitor
+# -----------------
+output "BNQ BenQ RL2460H S2G01438SL0" {
+  mode 1920x1080@60.0
+    position 0,0
+    scale 1
+    alias $HOME_LEFT
+}
+output "Acer Technologies XB253Q TH5EE00B8521" {
+  mode 1920x1080@60.0
+  position 1920,0
+  scale 1
+  alias $HOME_MAIN
+}
+output "BNQ BenQ RL2460H J7F06731SL0" {
+  mode 1920x1080@60.0
+  position 3840,0
+  scale 1
+  alias $HOME_RIGHT
+}
+output "Dell Inc. DELL U3425WE 971Q3Z3" {
+  mode 3440x1440@120.00
+  position 0,0
+  scale 1
+  alias $KUEKI_1
+}
+output "Dell Inc. DELL C3422WE HKBJS83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_1
+}
+output "Dell Inc. DELL C3422WE GYLNP83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_2
+}
+output "Dell Inc. DELL C3422WE 97K5S83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_3
+}
+output "Dell Inc. DELL C3422WE 2MBJS83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_4
+}
+output "Dell Inc. DELL C3422WE G2L5S83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_5
+}
+output "Dell Inc. DELL P3424WEB 7WQ1N04" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_6
+}
+
+# -----------------
+# Private profiles
+# -----------------
+profile notebook {
+  output $NOTEBOOK enable
+  exec notify-send --app-name kanshi 'Kanshi' 'Applied profile: notebook'
+}
+
+profile home {
+  output $NOTEBOOK disable
+  output $HOME_LEFT enable
+  output $HOME_MAIN enable
+  output $HOME_RIGHT enable
+  exec swaymsg workspace 11, move workspace to output '"BNQ BenQ RL2460H S2G01438SL0"'
+  exec swaymsg workspace 12, move workspace to output '"BNQ BenQ RL2460H J7F06731SL0"'
+  exec notify-send --app-name kanshi 'Kanshi' 'Applied profile: home'
+}
+
+profile kueki {
+  output $NOTEBOOK disable
+  output $KUEKI_1 enable
+  exec notify-send --app-name kanshi 'Kanshi' 'Applied profile: kueki'
+}
+
+# -----------------
+# Work Profiles
+# -----------------
+profile work_1 {
+  output $NOTEBOOK disable
+  output $WORK_1 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_1'
+}
+profile work_2 {
+  output $NOTEBOOK disable
+  output $WORK_2 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_2'
+}
+profile work_3 {
+  output $NOTEBOOK disable
+  output $WORK_3 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_3'
+}
+profile work_4 {
+  output $NOTEBOOK disable
+  output $WORK_4 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_4'
+}
+profile work_5 {
+  output $NOTEBOOK disable
+  output $WORK_5 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_5'
+}
+profile work_6 {
+  output $NOTEBOOK disable
+  output $WORK_6 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_6'
+}

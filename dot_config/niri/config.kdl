@@ -1,0 +1,367 @@
+// ---------------------------
+// Input device configuration.
+// ---------------------------
+input {
+    keyboard {
+        xkb {
+            // German layout
+            layout "de"
+            // Disable capslock
+            options "ctrl:nocaps"
+        }
+
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+    mouse {
+        accel-speed 0.1
+        accel-profile "flat"
+    }
+    trackpoint {}
+    touch {
+      // Disable touchscreens.
+      off
+    }
+
+    // Warp mouse to the center of newly focused windows.
+    warp-mouse-to-focus
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+// ---------------------------
+// Output (Monitor) configuration.
+// ---------------------------
+
+// Notebook
+output "eDP-1" {
+    // off
+    mode "1920x1080@60.0"
+    scale 1.0
+    transform "normal"
+}
+
+// Home Monitor Setup
+output "PNP(BNQ) BenQ RL2460H S2G01438SL0" {
+    off
+}
+output "Acer Technologies XB253Q TH5EE00B8521" {
+    mode "1920x1080@60.0"
+    scale 1.0
+    transform "normal"
+    position x=0 y=0
+}
+output "PNP(BNQ) BenQ RL2460H J7F06731SL0" {
+    off
+}
+
+// ---------------------------
+// Gestures configuration.
+// ---------------------------
+gestures {
+    // Disable the hot corners.
+    hot-corners {
+        off
+    }
+}
+
+// ---------------------------
+// Look & Feel
+// ---------------------------
+
+// Set cursor appearance.
+cursor {
+    xcursor-theme "BreezeX-RosePine"
+    xcursor-size 14
+}
+
+// No window client-side-decorations.
+prefer-no-csd
+
+// Disable animations.
+animations {
+    off
+}
+
+// Set overview settings.
+overview {
+    backdrop-color "#050707"
+}
+
+// Set layout.
+layout {
+    // Disable gaps.
+    gaps 0
+
+    // Set background color.
+    background-color "#090c0c"
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    // Let the application decide the column width by default.
+    default-column-width {}
+
+    // Disable borders of any kind.
+    focus-ring {
+      off
+    }
+    border {
+      width 1
+      active-color "#505050"
+      inactive-color "#505050"
+      urgent-color "#9b0000"
+    }
+    shadow {}
+    struts {}
+}
+
+// ---------------------------
+// Startup
+// ---------------------------
+spawn-at-startup "waybar"
+
+// ---------------------------
+// Misc.
+// ---------------------------
+hotkey-overlay {
+    // Disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
+
+// Screenshot settings.
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+
+// ---------------------------
+// Window rules
+// ---------------------------
+
+// Open the Librewolf picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"librewolf"# title="^Picture-in-Picture$"
+    open-floating true
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+    border {
+      active-color "#05ebfc"
+    }
+}
+
+// Move screen sharing popup to unused workspace []=
+window-rule {
+    match title=r#"is sharing your screen\.$"#
+    open-focused false
+    open-on-workspace "[]="
+}
+
+// Development of the lasergraph-show-control.
+window-rule {
+    match app-id="lasergraph-show-control"
+    open-floating true
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
+// ---------------------------
+// Named Workspaces
+// ---------------------------
+
+// Workaround for having kind of static workspaces.
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+workspace "9"
+
+// Scratch workspace
+workspace "[]="
+
+// ---------------------------
+// Keybinds
+// ---------------------------
+binds {
+    // Hotkey Overlay
+    Mod+Shift+U { show-hotkey-overlay; }
+
+    // Terminal
+    Mod+Return hotkey-overlay-title="Open Terminal: alacritty" { spawn "alacritty"; }
+
+    // Application launcher
+    Mod+Space hotkey-overlay-title="Run an Application: wmenu" {
+     spawn "wmenu-run" "-f" "JetBrainsMono Nerd Font 14" "-l" "10";
+    }
+
+    // Screen lock
+    Super+Shift+Return hotkey-overlay-title="Lock Screen: swaylock" {
+      spawn "swaylock" "-c" "#0e1415" "--font" "JetBrainsMono Nerd Font";
+    }
+
+    // Screen lock + suspend
+    Super+Shift+Alt+Return hotkey-overlay-title="Lock and Suspend" {
+      spawn-sh "swaylock -c \"#0e1415\" --font \"JetBrainsMono Nerd Font\" & systemctl suspend";
+    }
+
+    // Audio
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Brightness
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    // Shortcuts
+    Mod+Tab repeat=false { toggle-overview; }
+    Mod+Shift+Q repeat=false { close-window; }
+
+    // Focus windows
+    Mod+H     { focus-column-left; }
+    Mod+L     { focus-column-right; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+
+    // Move windows
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+L     { move-column-right; }
+    Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+
+    // TODO: Monitor stuff
+    // Mod+Shift+H     { focus-monitor-left; }
+    // Mod+Shift+J     { focus-monitor-down; }
+    // Mod+Shift+K     { focus-monitor-up; }
+    // Mod+Shift+L     { focus-monitor-right; }
+    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+
+    // You can bind mouse wheel scroll ticks using the following syntax.
+    // These binds will change direction based on the natural-scroll setting.
+    //
+    // To avoid scrolling through workspaces really fast, you can use
+    // the cooldown-ms property. The bind will be rate-limited to this value.
+    // You can set a cooldown on any bind, but it's most useful for the wheel.
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+
+    // Usually scrolling up and down with Shift in applications results in
+    // horizontal scrolling; these binds replicate that.
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    // Workaround with double quotes to use the named workspaces.
+    // Focus workspace
+    Mod+1 { focus-workspace "1"; }
+    Mod+2 { focus-workspace "2"; }
+    Mod+3 { focus-workspace "3"; }
+    Mod+4 { focus-workspace "4"; }
+    Mod+5 { focus-workspace "5"; }
+    Mod+6 { focus-workspace "6"; }
+    Mod+7 { focus-workspace "7"; }
+    Mod+8 { focus-workspace "8"; }
+    Mod+9 { focus-workspace "9"; }
+    // Move to workspace
+    Mod+Shift+1 { move-column-to-workspace "1"; }
+    Mod+Shift+2 { move-column-to-workspace "2"; }
+    Mod+Shift+3 { move-column-to-workspace "3"; }
+    Mod+Shift+4 { move-column-to-workspace "4"; }
+    Mod+Shift+5 { move-column-to-workspace "5"; }
+    Mod+Shift+6 { move-column-to-workspace "6"; }
+    Mod+Shift+7 { move-column-to-workspace "7"; }
+    Mod+Shift+8 { move-column-to-workspace "8"; }
+    Mod+Shift+9 { move-column-to-workspace "9"; }
+
+
+    // Resize columns.
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    // Expand the focused column to space not taken up by other fully visible columns.
+    // Makes the column "fill the rest of the space".
+    Mod+Ctrl+F { expand-column-to-available-width; }
+
+    Mod+C { center-column; }
+
+    // Center all fully visible columns on screen.
+    Mod+Ctrl+C { center-visible-columns; }
+
+    // Finer width adjustments.
+    // This command can also:
+    // * set width in pixels: "1000"
+    // * adjust width in pixels: "-5" or "+5"
+    // * set width as a percentage of screen width: "25%"
+    // * adjust width as a percentage of screen width: "-10%" or "+10%"
+    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
+    // set-column-width "100" will make the column occupy 200 physical screen pixels.
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Finer height adjustments when in column with other windows.
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // Move the focused window between the floating and the tiling layout.
+    // Mod+V       { toggle-window-floating; }
+    // Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Actions to switch layouts.
+    // Note: if you uncomment these, make sure you do NOT have
+    // a matching layout switch hotkey configured in xkb options above.
+    // Having both at once on the same hotkey will break the switching,
+    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
+    // Mod+Space       { switch-layout "next"; }
+    // Mod+Shift+Space { switch-layout "prev"; }
+
+    // Take Screenshot
+    Mod+Print { screenshot; }
+
+    // Applications such as remote-desktop clients and software KVM switches may
+    // request that niri stops processing the keyboard shortcuts defined here
+    // so they may, for example, forward the key presses as-is to a remote machine.
+    // It's a good idea to bind an escape hatch to toggle the inhibitor,
+    // so a buggy application can't hold your session hostage.
+    //
+    // The allow-inhibiting=false property can be applied to other binds as well,
+    // which ensures niri always processes them, even when an inhibitor is active.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // The quit action will show a confirmation dialog to avoid accidental exits.
+    Mod+Shift+M { quit; }
+    Ctrl+Alt+Delete { quit; }
+
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+    Mod+Shift+P { power-off-monitors; }
+}
