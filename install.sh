@@ -4,7 +4,7 @@
 
 set -e
 
-DOTFILES_SOURCE_PATH="$HOME/dotfiles/dotfiles"
+DOTFILES_SOURCE_PATH="$HOME/dotfiles"
 DOTFILES_TARGET_PATH="$HOME/.config"
 
 echo "Start devcontainer setup"
