@@ -354,7 +354,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
   group = 'my-statusline',
   callback = function()
     vim.wo.statusline =
-    '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %#StatusLineMode# %{&filetype} %#StatusLine#'
+    '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %{&fileformat} %#StatusLineMode# %{&filetype} %#StatusLine#'
   end,
 })
 vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
