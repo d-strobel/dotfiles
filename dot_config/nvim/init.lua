@@ -177,10 +177,7 @@ vim.filetype.add({
 -----------------------------
 --: Treesitter
 -----------------------------
-local treesitter_filetypes = { "python", "c", "lua", "vim", "vimdoc", "yaml", "xml", "typst", "typescript", "toml",
-  "tmux", "terraform", "ssh_config", "rust", "regex", "python", "promql", "nix", "nginx", "markdown",
-  "make", "lua", "latex", "java", "just", "json", "kdl", "ini", "hyprlang", "html", "helm", "hcl", "gosum", "gomod", "go",
-  "gitignore", "gitcommit", "fish", "editorconfig", "dockerfile", "csv", "css", "bash", "astro" }
+local treesitter_filetypes = { "gitcommit" }
 
 require('nvim-treesitter').install(treesitter_filetypes)
 
@@ -291,6 +288,54 @@ require("cloak").setup({
 -----------------------------
 --: Auotcommands
 -----------------------------
+
+-- Treesitter
+vim.api.nvim_create_autocmd('FileType', {
+  desc = "Enable Treesitter",
+  group = vim.api.nvim_create_augroup("enable_treesitter", {}),
+  callback = function(event)
+    local bufnr = event.buf
+    local filetype = vim.bo[bufnr].filetype
+
+    -- Skip if no filetype
+    if filetype == "" then
+      return
+    end
+
+    -- Get parser name based on filetype
+    local parser_name = vim.treesitter.language.get_lang(filetype)
+    if not parser_name then
+      vim.notify(vim.inspect("No treesitter parser found for filetype: " .. filetype), vim.log.levels.WARN)
+      -- Use regex based syntax-highlighting as fallback
+      vim.bo[bufnr].syntax = "ON"
+      return
+    end
+
+    -- Start available parsers
+    local start_ts = function()
+      vim.treesitter.start(bufnr, parser_name)
+      -- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      -- vim.wo.foldmethod = 'expr'
+      vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+
+    -- Try to start an available parser
+    local ok, available = pcall(vim.treesitter.language.add, parser_name)
+    if ok and available then
+      start_ts()
+      return
+    end
+
+    -- Install from available parsers on demand.
+    local ts_config = require('nvim-treesitter.config')
+    if not vim.tbl_contains(ts_config.get_available(), parser_name) then
+      vim.bo[bufnr].syntax = "ON"
+      return
+    end
+    vim.notify("Installing parser for " .. parser_name, vim.log.levels.INFO)
+    require('nvim-treesitter').install({ parser_name }):await(start_ts)
+  end,
+})
 
 -- Statusline
 vim.api.nvim_set_hl(0, "StatusLineMode", {
