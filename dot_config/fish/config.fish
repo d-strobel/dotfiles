@@ -11,7 +11,7 @@ if status is-interactive
     alias vi="nvim"
 
     # Theme
-    fish_config theme choose alabaster_dark
+    fish_config theme choose alabaster
 
     # Interactive shell initialisation
     fzf --fish | source

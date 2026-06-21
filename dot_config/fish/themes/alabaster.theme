@@ -1,5 +1,6 @@
 # vi: set ft=fish :
 
+[dark]
 # name: 'Alabaster Dark'
 # license: 'MIT'
 # preferred_background: 0E1415
@@ -54,3 +55,59 @@ fish_pager_color_selected_description DFDF8E
 fish_pager_color_progress 777777
 fish_pager_color_background 0E1415
 fish_pager_color_selected_background --background=182325
+
+[light]
+# name: 'Alabaster Light'
+# license: 'MIT'
+# preferred_background: F7F7F7
+
+# Core colors (Alabaster Light)
+# - #000000 - Default Text (black)
+# - #F7F7F7 - Background (off white)
+#
+# The 4 semantic colors
+# - #448C27 - Strings (green)
+# - #7A3E9D - Valid Filepaths (magenta)
+# - #AA8800 - Comments (yellow)
+# - #325CC0 - Commands (blue)
+#
+# Supporting Colors:
+# - #CC3333 - Errors (red)
+# - #BFDBFE - Selection background (light blue)
+# - #AAAAAA - Dimmed (gray)
+
+# Syntax highlighting variables
+fish_color_normal 000000
+fish_color_command 325CC0
+fish_color_redirection 000000
+fish_color_end 000000
+fish_color_operator 000000
+fish_color_param 000000
+fish_color_error CC3333
+fish_color_comment AA8800
+fish_color_quote 448C27
+fish_color_cwd 000000
+fish_color_cwd_root 000000
+fish_color_valid_path 7A3E9D
+fish_color_match --background=BFDBFE
+fish_color_selection --background=BFDBFE
+fish_color_user 7A3E9D
+fish_color_host 7A3E9D
+fish_color_escape 000000
+fish_color_autosuggestion AAAAAA
+fish_color_keyword 000000
+fish_color_option 000000
+fish_color_history_current
+fish_color_status CC3333
+fish_color_cancel CC3333 --reverse
+
+# Pager color variables
+fish_pager_color_prefix 000000
+fish_pager_color_selected_prefix 000000
+fish_pager_color_completion 000000
+fish_pager_color_selected_completion 000000
+fish_pager_color_description AA8800
+fish_pager_color_selected_description AA8800
+fish_pager_color_progress AAAAAA
+fish_pager_color_background F7F7F7
+fish_pager_color_selected_background --background=BFDBFE
