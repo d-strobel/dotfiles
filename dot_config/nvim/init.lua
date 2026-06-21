@@ -178,7 +178,6 @@ vim.filetype.add({
 --: Treesitter
 -----------------------------
 local treesitter_filetypes = { "gitcommit" }
-
 require('nvim-treesitter').install(treesitter_filetypes)
 
 -----------------------------
