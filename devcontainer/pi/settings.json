@@ -1,0 +1,7 @@
+{
+  "theme": "light/dark",
+  "defaultThinkingLevel": "low",
+  "enableInstallTelemetry": false,
+  "defaultProjectTrust": "always",
+  "hideThinkingBlock": false
+}
