@@ -22,14 +22,18 @@ echo "Remove old dotfiles"
 rm -rf "$DOTFILES_TARGET_PATH/fish"
 rm -rf "$DOTFILES_TARGET_PATH/nvim"
 rm -rf "$DOTFILES_TARGET_PATH/mise"
+rm -rf "$HOME/.pi/agent/extensions"
 
-echo "Copy devcontainer dotfiles"
+echo "Create directories"
+mkdir -p "$HOME/.pi/agent"
+
+echo "Link devcontainer dotfiles"
 ln -s "$DOTFILES_SOURCE_PATH/devcontainer/fish" "$DOTFILES_TARGET_PATH/fish"
 ln -s "$DOTFILES_SOURCE_PATH/devcontainer/mise" "$DOTFILES_TARGET_PATH/mise"
 ln -s "$DOTFILES_SOURCE_PATH/dot_config/nvim" "$DOTFILES_TARGET_PATH/nvim"
+ln -s "$DOTFILES_SOURCE_PATH/devcontainer/pi/extensions" "$HOME/.pi/agent/extensions"
 
-echo "Copy pi settings if not present"
-mkdir -p "$HOME/.pi/agent"
+echo "Copy pi settings"
 cp --update=none "$DOTFILES_SOURCE_PATH"/devcontainer/pi/*.json "$HOME/.pi/agent/"
 
 echo "Set user shell to fish"
