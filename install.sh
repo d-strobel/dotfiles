@@ -30,7 +30,7 @@ ln -s "$DOTFILES_SOURCE_PATH/dot_config/nvim" "$DOTFILES_TARGET_PATH/nvim"
 
 echo "Copy pi settings if not present"
 mkdir -p "$HOME/.pi/agent"
-cp --update=none "$DOTFILES_SOURCE_PATH/devcontainer/pi/*.json" "$HOME/.pi/agent/"
+cp --update=none "$DOTFILES_SOURCE_PATH"/devcontainer/pi/*.json "$HOME/.pi/agent/"
 
 echo "Set user shell to fish"
 sudo chsh vscode --shell "$(which fish)"
