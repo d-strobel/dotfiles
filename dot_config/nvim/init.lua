@@ -333,7 +333,7 @@ vim.api.nvim_create_autocmd('FileType', {
       return
     end
     vim.notify("Installing parser for " .. parser_name, vim.log.levels.INFO)
-    require('nvim-treesitter').install({ parser_name }):await(start_ts)
+    require('nvim-treesitter').install({ parser_name })
   end,
 })
 
