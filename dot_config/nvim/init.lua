@@ -152,11 +152,7 @@ require('vim._core.ui2').enable({
 -----------------------------
 vim.filetype.add({
   extension = {
-    -- OpenTofu
-    tf = "terraform",
-    tfvars = "terraform-vars",
-    tofu = "terraform",
-    tofuvars = "terraform-vars",
+    -- Terraform
     tfbackend = "config",
     tfstate = "json",
     -- Jinja
