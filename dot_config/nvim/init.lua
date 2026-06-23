@@ -172,6 +172,19 @@ vim.filetype.add({
   filename = {
     ["envrc"] = "dotenv",
   },
+  pattern = {
+    -- Ansible
+    [".*%.ansible%.ya?ml"] = "yaml.ansible",
+    [".*site.*%.ya?ml"] = "yaml.ansible",
+    [".*/defaults/.*%.ya?ml"] = "yaml.ansible",
+    [".*/meta/.*%.ya?ml"] = "yaml.ansible",
+    [".*/tasks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/handlers/.*%.ya?ml"] = "yaml.ansible",
+    [".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/playbook.*%.ya?ml"] = "yaml.ansible",
+  },
 })
 
 -----------------------------
@@ -520,10 +533,6 @@ vim.lsp.config("yamlls", {
         "azure-pipelines*.{yml,yaml}",
 
         -- Ansible
-        ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks"] =
-        "tasks/*.{yml,yaml}",
-        ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook"] =
-        "*{play,site}*.{yml,yaml}",
 
         -- OpenAPI
         ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] =
