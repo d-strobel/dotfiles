@@ -530,7 +530,7 @@ vim.lsp.config("yamlls", {
 
         -- Ansible
         ["https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/inventory.json"] =
-        {"*/inventory/*.{yml,yaml}", "hosts.yml"},
+        { "*/inventory/*.{yml,yaml}", "hosts.yml" },
 
         -- OpenAPI
         ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] =
