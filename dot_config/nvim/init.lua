@@ -97,6 +97,11 @@ vim.keymap.set("n", "<leader>gp", "<CMD>Git push<CR>")                 -- Git Pu
 vim.g.alabaster_dim_comments = true
 vim.cmd.colorscheme "alabaster"
 
+vim.api.nvim_set_hl(0, "FloatBorder", {
+  fg = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg,
+  bg = vim.api.nvim_get_hl(0, { name = "NormalFloat" }).bg,
+})
+
 -----------------------------
 --: UI2
 -----------------------------
