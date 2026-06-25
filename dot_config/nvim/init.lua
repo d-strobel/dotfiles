@@ -46,7 +46,6 @@ vim.opt.complete = '.,w,b,u,o'
 vim.opt.completeopt = 'menuone,popup,noselect,fuzzy'
 vim.opt.pumheight = 10
 vim.opt.autocomplete = true
-vim.opt.grepprg = 'rg --vimgrep --no-messages --smart-case'
 
 -- Non-Local systems
 if not vim.tbl_contains({ 'noxus', 'piltover' }, vim.loop.os_gethostname()) then
