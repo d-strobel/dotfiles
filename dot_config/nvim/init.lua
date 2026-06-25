@@ -339,10 +339,8 @@ require("cloak").setup({
 })
 
 -----------------------------
---: Auotcommands
+--: Statusline
 -----------------------------
-
--- Statusline
 function _G.get_file_indentation()
   local indent = vim.bo.expandtab and "spaces" or "tabs"
   local width = vim.fn.shiftwidth()
@@ -368,6 +366,10 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
     vim.wo.statusline = '%= %<%t %h%w%m%r %='
   end,
 })
+
+-----------------------------
+--: Autocommands
+-----------------------------
 
 -- Highlight yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
