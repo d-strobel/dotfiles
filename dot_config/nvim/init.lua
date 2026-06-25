@@ -377,7 +377,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- LSP Configuration
+-----------------------------
+--: LSP
+-----------------------------
 local autocmd_group_lsp = 'my-lsp'
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup(autocmd_group_lsp, { clear = true }),
