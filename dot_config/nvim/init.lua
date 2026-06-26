@@ -257,7 +257,6 @@ require("oil").setup({
 })
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
 
-
 -----------------------------
 --: FFF
 -----------------------------
@@ -291,7 +290,6 @@ require('fff').setup({
     send_to_quickfix = { '<C-q>', '<M-q>' },
   },
 })
-
 vim.keymap.set('n', '<leader>ff', function() require('fff').find_files() end)
 vim.keymap.set('n', '<leader>fg', function() require('fff').live_grep() end)
 
@@ -312,7 +310,6 @@ require('fzf-lua').setup({
     },
   },
 })
-
 vim.keymap.set("n", "<leader>fb", FzfLua.buffers)
 vim.keymap.set("n", "<leader>fm", FzfLua.marks)
 vim.keymap.set("n", "<leader>fh", FzfLua.helptags)
