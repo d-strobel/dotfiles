@@ -1,6 +1,16 @@
 -----------------------------
 --: Plugins
 -----------------------------
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
+      if not ev.data.active then vim.cmd.packadd('fff.nvim') end
+      require('fff.download').download_or_build_binary()
+    end
+  end,
+})
+
 vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/neovim/nvim-lspconfig.git" },
@@ -260,16 +270,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
 -----------------------------
 --: FFF
 -----------------------------
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
-      if not ev.data.active then vim.cmd.packadd('fff.nvim') end
-      require('fff.download').download_or_build_binary()
-    end
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function(args)
     if vim.bo[args.buf].filetype ~= "fff_input" then
@@ -278,7 +278,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
-require('fff').setup({
+vim.g.fff = {
   prompt = '> ',
   layout = { prompt_position = 'top' },
   preview = { enabled = false },
@@ -289,7 +289,7 @@ require('fff').setup({
     cycle_grep_modes = '<S-Tab>',
     send_to_quickfix = { '<C-q>', '<M-q>' },
   },
-})
+}
 vim.keymap.set('n', '<leader>ff', function() require('fff').find_files() end)
 vim.keymap.set('n', '<leader>fg', function() require('fff').live_grep() end)
 
