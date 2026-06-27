@@ -35,5 +35,8 @@ mkdir -p "$OUT_DIR"
 # Write sway settings here to config file
 echo "output * bg $PIC fill" > "$OUT_FILE"
 
-# Finally reload sway
-swaymsg reload --quiet
+# Reload sway with the correct socket
+for socket in /run/user/$UID/sway-ipc.*.sock; do
+  [ -S "$socket" ] || continue
+  exec swaymsg -s "$socket" --quiet reload
+done
