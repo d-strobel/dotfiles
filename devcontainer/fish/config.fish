@@ -15,6 +15,9 @@ if status is-interactive
 
     # Direnv integration
     direnv hook fish | source
+
+    # Set fzf options
+    set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
 end
 
 # Global variables
