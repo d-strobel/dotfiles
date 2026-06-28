@@ -19,7 +19,7 @@ if status is-interactive
     # Pi settings
     set -gx PI_SKIP_VERSION_CHECK 1
     set -gx PI_FFF_MODE override
-    set -gx FFF_FRECENCY_DB ~/.cache/nvim/fff_nvim/data.mdb
+    set -gx FFF_FRECENCY_DB ~/.cache/nvim/fff_nvim
 
     # Fzf settings
     set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
