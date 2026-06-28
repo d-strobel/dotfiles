@@ -3,5 +3,8 @@
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
-  "hideThinkingBlock": false
+  "hideThinkingBlock": false,
+  "packages": [
+    "npm:@ff-labs/pi-fff"
+  ]
 }
