@@ -5,6 +5,7 @@
 set -e
 
 DOTFILES_SOURCE_PATH="$HOME/dotfiles"
+MISE_SCRIPT_BIN="$HOME/.local/bin/mise"
 
 ensure_symlink() {
     local source="$1"
@@ -39,7 +40,8 @@ ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/settings.json" "$HOME/.pi/
 
 echo "Deploy mise"
 curl https://mise.run | sh
-"$HOME/.local/bin/mise" install
+"$MISE_SCRIPT_BIN" install
+eval "$($MISE_SCRIPT_BIN activate bash)"
 
 # Check if the last plugin in the vim.pack.add list is installed
 if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fff.nvim" ]; then
