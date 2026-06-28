@@ -41,5 +41,10 @@ echo "Deploy mise"
 curl https://mise.run | sh
 "$HOME/.local/bin/mise" install
 
+# Check if the last plugin in the vim.pack.add list is installed
+if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fff.nvim" ]; then
+  echo "Install Neovim plugins"
+  nvim --headless "+qa"
+fi
 
 echo "Finished devcontainer setup"
