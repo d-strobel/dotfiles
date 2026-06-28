@@ -24,7 +24,7 @@ echo "Start devcontainer setup"
 
 if command -v fish >/dev/null 2>&1; then
   echo "Set user shell to fish"
-  sudo chsh vscode --shell fish
+  sudo chsh vscode --shell "$(which fish)"
 else
   echo "WARNING - fish is not installed!"
 fi
