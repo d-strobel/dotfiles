@@ -201,7 +201,7 @@ vim.filetype.add({
 -----------------------------
 --: Treesitter
 -----------------------------
-require('nvim-treesitter').install({ "gitcommit" })
+require('nvim-treesitter')
 
 -- Autocommand to detect language and isntall grammer just in time.
 vim.api.nvim_create_autocmd('FileType', {
