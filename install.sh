@@ -39,6 +39,7 @@ ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/keybindings.json" "$HOME/.
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/settings.json" "$HOME/.pi/agent/settings.json"
 
 echo "Deploy mise"
+export MISE_QUIET=1
 curl https://mise.run | sh
 "$MISE_SCRIPT_BIN" install
 eval "$($MISE_SCRIPT_BIN activate bash)"
