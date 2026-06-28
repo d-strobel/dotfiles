@@ -1,13 +1,3 @@
-[settings]
-dotfiles.root = "~/dotfiles"
-dotfiles.default_mode = "symlink"
-
-[dotfiles]
-"~/.config/fish" = "dotfiles/devcontainer/fish"
-"~/.config/nvim" = "dotfiles/dot_config/nvim"
-"~/.pi/agent/extensions" = "dotfiles/devcontainer/pi/extensions"
-"~/.pi/agent/*.json" = "dotfiles/devcontainer/pi/*.json"
-
 [tools]
 neovim = "latest"
 fzf = "latest"
@@ -16,6 +6,3 @@ zoxide = "latest"
 tree-sitter = "latest"
 pi = "latest"
 node = "latest"
-
-[tasks.bootstrap]
-run = 'nvim --headless "+qa"'
