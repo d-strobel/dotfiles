@@ -22,7 +22,7 @@ ensure_symlink() {
 
 echo "Start devcontainer setup"
 
-if ! command -v fish >/dev/null 2>&1; then
+if command -v fish >/dev/null 2>&1; then
   echo "Set user shell to fish"
   sudo chsh vscode --shell "$(which fish)"
 else
