@@ -20,7 +20,7 @@ if status is-interactive
     set -gx PI_SKIP_VERSION_CHECK 1
     set -gx PI_FFF_MODE override
 
-    # Set fzf options
+    # Fzf settings
     set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
 end
 
