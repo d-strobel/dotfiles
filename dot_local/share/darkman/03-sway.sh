@@ -38,5 +38,5 @@ echo "output * bg $PIC fill" > "$OUT_FILE"
 # Reload sway with the correct socket
 for socket in /run/user/$UID/sway-ipc.*.sock; do
   [ -S "$socket" ] || continue
-  exec swaymsg -s "$socket" --quiet reload
+  swaymsg -s "$socket" --quiet reload 2>/dev/null
 done
