@@ -23,6 +23,11 @@ if status is-interactive
 
     # Fzf settings
     set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
+
+    # Fish keybinds
+    bind \cj down-or-search
+    bind \ck up-or-search
+    bind \cl execute
 end
 
 # Global variables
