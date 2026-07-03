@@ -28,6 +28,7 @@ if status is-interactive
     bind \cj down-or-search
     bind \ck up-or-search
     bind \cl execute
+    bind alt-i fish_editcmd
 end
 
 # Global variables
