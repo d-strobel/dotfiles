@@ -320,6 +320,8 @@ require('fzf-lua').setup({
 vim.keymap.set("n", "<leader>b", FzfLua.buffers)
 vim.keymap.set("n", "<leader>m", FzfLua.marks)
 vim.keymap.set("n", "<leader>h", FzfLua.helptags)
+vim.keymap.set("n", "<leader>j", FzfLua.jumps)
+vim.keymap.set("n", "<leader>d", FzfLua.diagnostics_workspace)
 
 -----------------------------
 --: Marks
