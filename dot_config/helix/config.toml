@@ -1,0 +1,6 @@
+theme = "wolf-alabaster-dark"
+
+[editor]
+line-number = "relative"
+mouse = false
+cursorline = true
