@@ -272,9 +272,7 @@ vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
 -----------------------------
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function(args)
-    if vim.bo[args.buf].filetype ~= "fff_input" then
-      vim.opt.autocomplete = false
-    end
+    vim.opt.autocomplete = vim.bo[args.buf].filetype ~= "fff_input"
   end,
 })
 
