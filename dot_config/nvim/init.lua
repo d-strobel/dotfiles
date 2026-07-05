@@ -63,6 +63,10 @@ if not vim.tbl_contains({ 'noxus', 'piltover' }, vim.loop.os_gethostname()) then
   vim.g.clipboard = "osc52"
 end
 
+vim.diagnostic.config {
+  virtual_lines = { current_line = true, },
+}
+
 -----------------------------
 --: Keymaps
 -----------------------------
@@ -431,7 +435,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
     -- Keymaps
-    vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+    -- vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
 
     -- Completion
