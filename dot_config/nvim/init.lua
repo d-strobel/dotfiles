@@ -85,11 +85,8 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })        -- Move m
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })        -- Move multilines in visual mode
 vim.keymap.set("n", "<C-d>", "<C-d>zz")                                -- Centralize while going page up and down
 vim.keymap.set("n", "<C-u>", "<C-u>zz")                                -- Centralize while going page up and down
-vim.keymap.set("n", "<leader>sr", ":%s/")                              -- Search and replace in current file (n)
 vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"")                      -- Search and replace in current file (v)
-vim.keymap.set("n", "<leader>qr", ":cdo s/")                           -- Quickfix search and replace
-vim.keymap.set("n", "<leader>qq", "<cmd>copen<CR>")                    -- Quickfix list open
-vim.keymap.set("n", "<leader>qc", "<cmd>cclose<CR>")                   -- Quickfix list open
+vim.keymap.set("n", "<leader>q", "<cmd>copen<CR>")                     -- Quickfix list open
 vim.keymap.set('n', '<M-n>', '<cmd>cnext<CR>zz')                       -- Quickfix next
 vim.keymap.set('n', '<M-p>', '<cmd>cprev<CR>zz')                       -- Quickfix next
 vim.keymap.set("n", "<leader>u", vim.cmd.Undotree)                     -- Toggle Undotree
@@ -104,6 +101,14 @@ vim.keymap.set("n", "<leader>p", [["+p]])                              -- Paste 
 vim.keymap.set("x", "p", function()
   return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true })
+
+-- Search and replace
+vim.keymap.set("n", "<leader>sr", function()
+  local cmd = vim.bo.buftype == "quickfix" and ":cdo s/ | update" .. string.rep("<Left>", 9) or ":%s/"
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes(cmd, true, false, true), "n", false
+  )
+end)
 
 -----------------------------
 --: Colorscheme
