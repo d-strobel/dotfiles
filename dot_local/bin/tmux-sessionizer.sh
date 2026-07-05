@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SEARCH_PATHS="$HOME/git/github.com/d-strobel $HOME/git/github.com/laser-zentrale-de $HOME/git/gitlab.com/strobel-iac $HOME/git/codeberg.org/d-strobel"
+SEARCH_PATHS="$HOME/git/github.com/d-strobel $HOME/git/github.com/laser-zentrale-de $HOME/git/gitlab.com/strobel-iac $HOME/git/codeberg.org/d-strobel $HOME/git/work"
 
 if [[ $# -eq 1 ]]; then
   selected=$1
