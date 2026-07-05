@@ -85,14 +85,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })        -- Move m
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })        -- Move multilines in visual mode
 vim.keymap.set("n", "<C-d>", "<C-d>zz")                                -- Centralize while going page up and down
 vim.keymap.set("n", "<C-u>", "<C-u>zz")                                -- Centralize while going page up and down
-vim.keymap.set("x", "<leader>p", [["_dP]])                             -- Void registry pasting
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])                     -- Copy to system clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]])                              -- Copy to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])                     -- Paste from system clipboard
-vim.keymap.set("n", "<leader>P", [["+P]])                              -- Paste from system clipboard
-vim.keymap.set("v", "p", '"_dp')                                       -- Paste over selected text without yanking it
-vim.keymap.set("v", "P", '"_dP')                                       -- Paste over selected text without yanking it
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])                     -- Delete to void registry
 vim.keymap.set("n", "<leader>sr", ":%s/")                              -- Search and replace in current file (n)
 vim.keymap.set("v", "<leader>sr", "y:%s/<C-r>\"")                      -- Search and replace in current file (v)
 vim.keymap.set("n", "<leader>qr", ":cdo s/")                           -- Quickfix search and replace
@@ -104,6 +96,14 @@ vim.keymap.set("n", "<leader>u", vim.cmd.Undotree)                     -- Toggle
 vim.keymap.set("n", "<leader>gs", "<CMD>Git<CR>")                      -- Git Status
 vim.keymap.set("n", "<leader>gc", "<CMD>Git commit<CR>")               -- Git Commit
 vim.keymap.set("n", "<leader>gp", "<CMD>Git push<CR>")                 -- Git Push
+vim.keymap.set("v", "<leader>y", [["+y]])                              -- Copy to system clipboard
+vim.keymap.set("n", "<leader>yy", [["+yy]])                            -- Copy to system clipboard
+vim.keymap.set("n", "<leader>p", [["+p]])                              -- Paste from system clipboard
+
+-- Paste without yanking
+vim.keymap.set("x", "p", function()
+  return 'pgv"' .. vim.v.register .. "y"
+end, { remap = false, expr = true })
 
 -----------------------------
 --: Colorscheme
