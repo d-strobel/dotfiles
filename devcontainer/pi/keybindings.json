@@ -7,7 +7,7 @@
   "tui.select.confirm": ["enter", "ctrl+l"],
   "tui.select.pageUp": ["ctrl+u"],
   "tui.select.pageDown": ["ctrl+d"],
-  "app.editor.external": ["ctrl+i"],
+  "app.editor.external": ["alt+i"],
   "app.thinking.cycle": ["ctrl+t", "shift+tab"],
   "app.exit": ["ctrl+x"],
   "app.model.select": [],
