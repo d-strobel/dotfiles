@@ -288,8 +288,8 @@ vim.g.fff = {
     send_to_quickfix = { '<C-q>', '<M-q>' },
   },
 }
-vim.keymap.set('n', '<leader>ff', function() require('fff').find_files() end)
-vim.keymap.set('n', '<leader>fg', function() require('fff').live_grep() end)
+vim.keymap.set('n', '<leader>f', function() require('fff').find_files() end)
+vim.keymap.set('n', '<leader>l', function() require('fff').live_grep() end)
 
 -----------------------------
 --: Fzf
@@ -308,9 +308,9 @@ require('fzf-lua').setup({
     },
   },
 })
-vim.keymap.set("n", "<leader>fb", FzfLua.buffers)
-vim.keymap.set("n", "<leader>fm", FzfLua.marks)
-vim.keymap.set("n", "<leader>fh", FzfLua.helptags)
+vim.keymap.set("n", "<leader>b", FzfLua.buffers)
+vim.keymap.set("n", "<leader>m", FzfLua.marks)
+vim.keymap.set("n", "<leader>h", FzfLua.helptags)
 
 -----------------------------
 --: Marks
