@@ -4,6 +4,10 @@
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
   "hideThinkingBlock": false,
+  "npmCommand": [
+    "bun",
+    "add"
+  ],
   "packages": [
     "npm:@ff-labs/pi-fff"
   ]
