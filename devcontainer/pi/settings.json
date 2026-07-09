@@ -9,6 +9,7 @@
     "add"
   ],
   "packages": [
-    "npm:@ff-labs/pi-fff"
+    "npm:@ff-labs/pi-fff",
+    "npm:@aliou/pi-guardrails"
   ]
 }

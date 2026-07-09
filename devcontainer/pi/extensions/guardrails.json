@@ -1,0 +1,191 @@
+{
+  "$schema": "https://unpkg.com/@aliou/pi-guardrails@0.15.0/schema.json",
+  "applyBuiltinDefaults": true,
+  "version": "0.13.0-20260619",
+  "onboarding": {
+    "completed": true,
+    "completedAt": "2026-07-09T19:15:04.695Z",
+    "version": "0.13.0-20260619"
+  },
+  "features": {
+    "pathAccess": true
+  },
+  "pathAccess": {
+    "mode": "ask",
+    "allowedPaths": [
+      {
+        "kind": "file",
+        "path": "/dev/null"
+      }
+    ]
+  },
+  "policies": {
+    "rules": [
+      {
+        "id": "example-secret-env-files",
+        "name": "Secret env files",
+        "description": "Block .env files and variants",
+        "patterns": [
+          {
+            "pattern": ".env"
+          },
+          {
+            "pattern": ".env.*"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": ".env.example"
+          },
+          {
+            "pattern": "*.sample.env"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      },
+      {
+        "id": "example-regex-env",
+        "name": "Regex env files",
+        "description": "Regex example for env files",
+        "patterns": [
+          {
+            "pattern": "^\\.env(\\..+)?$",
+            "regex": true
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": "^\\.env\\.example$",
+            "regex": true
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      },
+      {
+        "id": "example-ssh-keys",
+        "name": "SSH keys",
+        "description": "Block SSH private key files",
+        "patterns": [
+          {
+            "pattern": "*.pem"
+          },
+          {
+            "pattern": "*_rsa"
+          },
+          {
+            "pattern": "*_ed25519"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": "*.pub"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      },
+      {
+        "id": "example-k8s-secrets",
+        "name": "Kubernetes secrets",
+        "description": "Block kubectl config and secrets",
+        "patterns": [
+          {
+            "pattern": ".kube/config"
+          },
+          {
+            "pattern": "*kubeconfig*"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      },
+      {
+        "id": "example-certificates",
+        "name": "Certificates",
+        "description": "Block certificate and key files",
+        "patterns": [
+          {
+            "pattern": "*.crt"
+          },
+          {
+            "pattern": "*.key"
+          },
+          {
+            "pattern": "*.p12"
+          }
+        ],
+        "allowedPatterns": [
+          {
+            "pattern": "*.csr"
+          }
+        ],
+        "protection": "noAccess",
+        "onlyIfExists": true,
+        "enabled": true
+      }
+    ]
+  },
+  "permissionGate": {
+    "patterns": [
+      {
+        "pattern": "docker inspect",
+        "description": "Docker inspect (may expose env vars)"
+      },
+      {
+        "pattern": "terraform apply",
+        "description": "Terraform infrastructure changes"
+      },
+      {
+        "pattern": "terraform destroy",
+        "description": "Terraform infrastructure destruction"
+      },
+      {
+        "pattern": "terraform import",
+        "description": "Terraform resource import"
+      },
+      {
+        "pattern": "tofu apply",
+        "description": "Opentofu infrastructure changes"
+      },
+      {
+        "pattern": "tofu destroy",
+        "description": "Opentofu infrastructure destruction"
+      },
+      {
+        "pattern": "tofu import",
+        "description": "Opentofu resource import"
+      },
+      {
+        "pattern": "kubectl delete",
+        "description": "Kubernetes resource deletion"
+      },
+      {
+        "pattern": "git push .*(-f\\b|--force(?!-with-lease)|--force-with-lease)",
+        "regex": true,
+        "description": "Git force push (any variant: --force, --force-with-lease, -f)"
+      },
+      {
+        "pattern": "DROP DATABASE",
+        "description": "SQL database drop"
+      },
+      {
+        "pattern": "DROP TABLE",
+        "description": "SQL table drop"
+      },
+      {
+        "pattern": "kubectl apply",
+        "description": "Kubernetes resource application"
+      },
+      {
+        "pattern": "kubectl scale",
+        "description": "Kubernetes scaling operation"
+      }
+    ]
+  }
+}
