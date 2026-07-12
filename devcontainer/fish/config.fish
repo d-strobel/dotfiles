@@ -3,11 +3,13 @@ if status is-interactive
     ~/.local/bin/mise activate fish | source
 
     # Aliases
-    alias lla 'ls -la'
-    alias la 'ls -la'
-    alias vimdiff 'nvim -d'
-    alias vim="nvim"
-    alias vi="nvim"
+    alias lla "ls -la"
+    alias la "ls -la"
+    alias vimdiff "nvim -d"
+    alias vim "nvim"
+    alias vi "nvim"
+    alias gs "git status"
+    alias gc "git commit"
 
     # Interactive shell initialisation
     fzf --fish | source
