@@ -38,11 +38,14 @@ ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/extensions" "$HOME/.pi/age
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/keybindings.json" "$HOME/.pi/agent/keybindings.json"
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/settings.json" "$HOME/.pi/agent/settings.json"
 
-echo "Deploy mise"
-export MISE_QUIET=1
-curl https://mise.run | sh
-"$MISE_SCRIPT_BIN" install
-eval "$($MISE_SCRIPT_BIN activate bash)"
+# Check if mise is installed
+if [ ! -x "$MISE_SCRIPT_BIN" ]; then
+  echo "Deploy mise"
+  export MISE_QUIET=1
+  curl https://mise.run | sh
+  "$MISE_SCRIPT_BIN" install
+  eval "$($MISE_SCRIPT_BIN activate bash)"
+fi
 
 # Check if the last plugin in the vim.pack.add list is installed
 if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fff.nvim" ]; then
