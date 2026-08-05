@@ -85,6 +85,24 @@ output "Dell Inc. DELL P3424WEB HTQ1N04" {
   scale 1
   alias $WORK_8
 }
+output "Dell Inc. DELL P3424WEB 2VQ1N04" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_9
+}
+output "Dell Inc. DELL C3422WE 60RXR83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_10
+}
+output "Dell Inc. DELL C3422WE 91L5S83" {
+  mode 3440x1440@59.973
+  position 0,0
+  scale 1
+  alias $WORK_11
+}
 
 # -----------------
 # Private profiles
@@ -152,4 +170,19 @@ profile work_8 {
   output $NOTEBOOK disable
   output $WORK_8 enable
   exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_8'
+}
+profile work_9 {
+  output $NOTEBOOK disable
+  output $WORK_9 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_9'
+}
+profile work_10 {
+  output $NOTEBOOK disable
+  output $WORK_10 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_10'
+}
+profile work_11 {
+  output $NOTEBOOK disable
+  output $WORK_11 enable
+  exec notify-send --app-name shikane 'Kanshi' 'Applied profile: work_11'
 }
