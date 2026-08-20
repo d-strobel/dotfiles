@@ -27,6 +27,10 @@ button {
     background-color: rgb(187, 213, 239);
 }
 
+#workspaces button.active {
+    background-color: rgb(187, 213, 239);
+}
+
 #workspaces button.urgent {
     background-color: rgba(169, 40, 40, 0.7);
 }
