@@ -10,6 +10,8 @@ auto-reload = false
 workspace-display-order = "sorted"
 show-titles = true
 
+focus-follows-mouse = false
+
 # German keymap, no caps-lock
 keymap.rmlvo = {
   layout = "de",
