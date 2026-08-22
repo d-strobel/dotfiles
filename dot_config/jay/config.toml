@@ -245,3 +245,9 @@ initial-tile-state = "floating"
 match.title = "Picture in picture"
 initial-tile-state = "floating"
 auto-focus = false
+
+[[windows]]
+match.title-regex = 'is sharing (your screen|a window)\.$'
+initial-tile-state = "floating"
+auto-focus = false
+action = { type = "move-to-workspace", name = "_" }
