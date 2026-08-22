@@ -33,8 +33,10 @@ critical_cpu = 90
 
 [[block]]
 block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2) "
-format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+format = " $icon $mem_used_percents.eng(w:2) "
+interval = 30
+warning_mem = 70
+critical_mem = 90
 
 [[block]]
 block = "battery"
