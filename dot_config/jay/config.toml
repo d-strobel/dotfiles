@@ -240,3 +240,8 @@ capabilities = ["data-control"]
 [[windows]]
 match.app-id = "org.pulseaudio.pavucontrol"
 initial-tile-state = "floating"
+
+[[windows]]
+match.title = "Picture in picture"
+initial-tile-state = "floating"
+auto-focus = false
