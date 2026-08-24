@@ -204,6 +204,7 @@ logo-shift-Return = {
 
 [theme]
 border-width = 2
+bar-position = "top"
 bar-height = 24
 title-height = 24
 container-borders = "separators"
