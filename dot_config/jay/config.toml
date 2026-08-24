@@ -19,6 +19,8 @@ keymap.rmlvo = {
   options = "ctrl:nocaps",
 }
 
+repeat-rate = { rate = 25, delay = 400 }
+
 # Exec-once before desktop is started
 on-startup = {
   type = "set-env",
@@ -49,11 +51,6 @@ on-idle = {
 # Disable sessions
 [session-management]
 enabled = false
-
-# Configure keyboards
-[[inputs]]
-match.is-keyboard = true
-repeat-rate = { rate = 25, delay = 400 }
 
 # Configure touchpads
 [[inputs]]
