@@ -10,6 +10,7 @@ auto-reload = false
 workspace-display-order = "sorted"
 show-titles = true
 
+# Misc
 focus-follows-mouse = false
 
 # German keymap, no caps-lock
