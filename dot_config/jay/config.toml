@@ -52,14 +52,26 @@ on-idle = {
 [session-management]
 enabled = false
 
-# Configure touchpads
+# Mouse settings
 [[inputs]]
 match.is-pointer = true
+natural-scrolling = false
+accel-profile = "Flat"
+accel-speed = -0.35
+
+# Configure touchpads
+[[inputs]]
+match = [
+    { name = "Synaptics TM3276-022" },
+    { name = "TPPS/2 IBM TrackPoint" },
+]
 tap-enabled = true
 tap-drag-enabled = true
 tap-drag-lock-enabled = false
 click-method = "clickfinger"
 natural-scrolling = true
+accel-profile = "Adaptive"
+accel-speed = 0.0
 
 # Configure lidswitch
 [[inputs]]
