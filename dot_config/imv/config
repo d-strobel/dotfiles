@@ -1,0 +1,14 @@
+# vi: set ft=ini :
+
+[options]
+suppress_default_binds = false
+
+[binds]
+j = pan 0 50
+k = pan 0 -50
+h = prev
+l = next
+<Left> = prev
+<Right> = next
+r = rotate by -90
+yy = exec wl-copy < "$imv_current_file" && notify-send --app-name imv "imv" "Copied to clipboard:\n$imv_current_file"
