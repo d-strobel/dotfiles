@@ -1,23 +1,26 @@
+# vi: set ft=gitconfig :
+
 [core]
-        bare = true
+	bare = true
+	excludesFile = /home/dstrobel/.config/git/ignore
 
 [diff]
-        tool = "vimdiff"
+	tool = "vimdiff"
 
 [gpg]
-        format = "openpgp"
+	format = "openpgp"
 
 [gpg "openpgp"]
-        program = "gpg"
+	program = "gpg"
 
 [includeIf "gitdir:~/git/github.com/"]
-        path = "/home/dstrobel/git/github.com/.gitconfig"
+	path = "/home/dstrobel/git/github.com/.gitconfig"
 
 [includeIf "gitdir:~/git/gitlab.com/"]
-        path = "/home/dstrobel/git/gitlab.com/.gitconfig"
+	path = "/home/dstrobel/git/gitlab.com/.gitconfig"
 
 [includeIf "gitdir:~/git/codeberg.org/"]
-        path = "/home/dstrobel/git/codeberg.org/.gitconfig"
+	path = "/home/dstrobel/git/codeberg.org/.gitconfig"
 
 [merge]
-        tool = "vimdiff"
+	tool = "vimdiff"
