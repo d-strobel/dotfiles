@@ -272,3 +272,7 @@ initial-tile-state = "floating"
 [[windows]]
 match.app-id = "imv"
 auto-focus = true
+
+[[windows]]
+match.title-regex = 'wants to open$'
+initial-tile-state = "floating"
