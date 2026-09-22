@@ -268,3 +268,7 @@ action = { type = "move-to-workspace", name = "_" }
 [[windows]]
 match.app-id = "engrampa"
 initial-tile-state = "floating"
+
+[[windows]]
+match.app-id = "imv"
+auto-focus = true
