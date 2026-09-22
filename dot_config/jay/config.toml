@@ -264,3 +264,7 @@ match.title-regex = 'is sharing (your screen|a window)\.$'
 initial-tile-state = "floating"
 auto-focus = false
 action = { type = "move-to-workspace", name = "_" }
+
+[[windows]]
+match.app-id = "engrampa"
+initial-tile-state = "floating"
