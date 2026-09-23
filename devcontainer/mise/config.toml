@@ -1,5 +1,5 @@
 [tools]
-neovim = "latest"
+neovim = "nighly"
 fzf = "latest"
 direnv = "latest"
 zoxide = "latest"
