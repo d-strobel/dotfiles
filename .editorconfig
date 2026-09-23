@@ -13,7 +13,7 @@ charset = utf-8
 indent_style = space
 indent_size = 2
 
-[*.fish]
+[{*.fish,*.sh}]
 indent_size = 4
 
 [{.gitconfig,.gitignore,.gitattributes,.gitmodules}]
