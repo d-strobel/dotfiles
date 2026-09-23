@@ -5,7 +5,7 @@ scale = 1.0
 # The icon theme to use for named icons.
 theme = "Adwaita"
 # Whether menus should stay open after clicking on an entry.
-keep-open = false
+keep-open = true
 
 # These settings apply to the icons displayed in the tray area.
 [icon]
