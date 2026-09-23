@@ -1,0 +1,21 @@
+[Added Associations]
+
+[Default Applications]
+application/pdf=sioyek.desktop
+application/x-bzip2=engrampa.desktop
+application/x-gzip=engrampa.desktop
+application/x-tar=engrampa.desktop
+application/zip=engrampa.desktop
+audio/mp3=vlc.desktop
+audio/x-matroska=vlc.desktop
+image/jpeg=imv-dir.desktop
+image/png=imv-dir.desktop
+video/mp4=vlc.desktop
+video/webm=vlc.desktop
+video/x-matroska=vlc.desktop
+x-scheme-handler/about=brave-origin.desktop
+x-scheme-handler/http=brave-origin.desktop
+x-scheme-handler/https=brave-origin.desktop
+x-scheme-handler/unknown=brave-origin.desktop
+
+[Removed Associations]

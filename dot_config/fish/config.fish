@@ -19,9 +19,6 @@ if status is-interactive
     fzf --fish | source
     zoxide init fish --cmd cd | source
 
-    # Keychain integration
-    SHELL=fish eval (keychain --eval --timeout 720 --quiet id_ed25519)
-
     # Direnv integration
     direnv hook fish | source
 
@@ -33,6 +30,10 @@ if status is-interactive
     bind \ck up-or-search
     bind \cl execute
     bind alt-i fish_editcmd
+
+    # This should always be the last option.
+    # Keychain integration
+    SHELL=fish eval (keychain --eval --timeout 720 --quiet id_ed25519)
 end
 
 # Global variables

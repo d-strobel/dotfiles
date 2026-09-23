@@ -1,4 +1,4 @@
-# EditorConfig configuration for nix-config
+# EditorConfig configuration
 # https://EditorConfig.org
 
 # Top-most EditorConfig file
@@ -15,3 +15,8 @@ indent_size = 2
 
 [*.fish]
 indent_size = 4
+
+[{.gitconfig,.gitignore,.gitattributes,.gitmodules}]
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = false

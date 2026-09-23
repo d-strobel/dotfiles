@@ -1,33 +1,5 @@
 # vim: ft=cfg
 
-# [global]
-# follow = mouse
-# width = 300
-# height = 100
-# origin = top-right
-# offset = 10x10
-# notification_limit = 5
-# progress_bar = true
-font = JetBrains Nerd Font Mono 12
-#
-# [urgency_low]
-# background = "#c9b890"
-# foreground = "#050707"
-# frame_color = "#c9b890"
-# timeout = 5
-#
-# [urgency_normal]
-# background = "#c9b890"
-# foreground = "#050707"
-# frame_color = "#c9b890"
-# timeout = 5
-#
-# [urgency_critical]
-# background = "#c9b890"
-# foreground = "#050707"
-# frame_color = "#c9b890"
-# timeout = 5
-
 # See dunst(5) for all configuration options
 
 [global]
@@ -71,7 +43,7 @@ font = JetBrains Nerd Font Mono 12
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (10, 50)
+    offset = (10, 60)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -125,7 +97,7 @@ font = JetBrains Nerd Font Mono 12
     # notifications.
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
     padding = 8
@@ -147,7 +119,7 @@ font = JetBrains Nerd Font Mono 12
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 8
 
     # Define a color for the separator.
     # possible values are:
@@ -374,24 +346,26 @@ font = JetBrains Nerd Font Mono 12
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3d474e"
+    background = "#000000"
     foreground = "#ffffff"
-    timeout = 10
+    frame_color = "#3f474a"
+    timeout = 5
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#3d474e"
+    background = "#000000"
     foreground = "#ffffff"
-    timeout = 10
+    frame_color = "#3f474a"
+    timeout = 5
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information
 
 [urgency_critical]
-    background = "#3d474e"
+    background = "#000000"
     foreground = "#ffffff"
-    frame_color = "#ff0000"
+    frame_color = "#f38ba8"
     timeout = 0
     override_pause_level = 60
     # Icon for notifications with critical urgency

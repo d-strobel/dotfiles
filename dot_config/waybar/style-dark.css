@@ -10,7 +10,7 @@ window#waybar {
 
 button {
     border: none;
-    border-radius: 4;
+    border-radius: 4px;
 }
 
 #workspaces button {
@@ -24,6 +24,10 @@ button {
 }
 
 #workspaces button.focused {
+    background-color: rgb(61, 71, 78);
+}
+
+#workspaces button.active {
     background-color: rgb(61, 71, 78);
 }
 
