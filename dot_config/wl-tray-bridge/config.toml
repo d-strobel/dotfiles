@@ -15,7 +15,7 @@ color = "#285577ff"
 # These settings apply to menus.
 [menu]
 # The font used in menus.
-font = "JetBrainsMono Nerd Font 10"
+font = "JetBrainsMono Nerd Font 12"
 # The normal font color.
 color = "#ffffff"
 # The background color.
