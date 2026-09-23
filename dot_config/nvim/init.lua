@@ -110,6 +110,12 @@ vim.keymap.set("n", "<leader>sr", function()
   )
 end)
 
+-- Delete multicursors
+vim.keymap.set("n", "<Esc><Esc><Esc>", function()
+  local mc_ns = vim.api.nvim_create_namespace('nvim.multicursor')
+  vim.api.nvim_buf_clear_namespace(0, mc_ns, 0, -1)
+end)
+
 -----------------------------
 --: Colorscheme
 -----------------------------
@@ -124,52 +130,7 @@ vim.api.nvim_set_hl(0, "FloatBorder", {
 -----------------------------
 --: UI2
 -----------------------------
-require('vim._core.ui2').enable({
-  enable = true,
-  msg = {
-    targets = {
-      [''] = 'msg',
-      empty = 'cmd',
-      bufwrite = 'msg',
-      confirm = 'cmd',
-      emsg = 'msg',
-      echo = 'msg',
-      echomsg = 'msg',
-      echoerr = 'msg',
-      completion = 'cmd',
-      list_cmd = 'msg',
-      lua_error = 'msg',
-      lua_print = 'msg',
-      progress = 'msg',
-      rpc_error = 'msg',
-      quickfix = 'msg',
-      search_cmd = 'cmd',
-      search_count = 'cmd',
-      shell_cmd = 'msg',
-      shell_err = 'msg',
-      shell_out = 'msg',
-      shell_ret = 'msg',
-      undo = 'msg',
-      verbose = 'msg',
-      wildlist = 'cmd',
-      wmsg = 'msg',
-      typed_cmd = 'cmd',
-    },
-    cmd = {
-      height = 0.5
-    },
-    dialog = {
-      height = 0.5,
-    },
-    msg = {
-      height = 0.5,
-      timeout = 4000,
-    },
-    pager = {
-      height = 1,
-    },
-  },
-})
+require('vim._core.ui2').enable({ enable = true })
 
 -----------------------------
 --: Filetypes
@@ -428,7 +389,7 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
   callback = function()
-    vim.hl.on_yank()
+    vim.hl.hl_op()
   end,
 })
 
