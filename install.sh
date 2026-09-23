@@ -24,10 +24,10 @@ ensure_symlink() {
 echo "Start devcontainer setup"
 
 if command -v fish >/dev/null 2>&1; then
-  echo "Set user shell to fish"
-  sudo chsh "$USER" --shell "$(which fish)"
+    echo "Set user shell to fish"
+    sudo chsh "$USER" --shell "$(which fish)"
 else
-  echo "WARNING - fish is not installed!"
+    echo "WARNING - fish is not installed!"
 fi
 
 # Symlink dotfiles
@@ -40,17 +40,17 @@ ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/settings.json" "$HOME/.pi/
 
 # Check if mise is installed
 if [ ! -x "$MISE_SCRIPT_BIN" ]; then
-  echo "Deploy mise"
-  export MISE_QUIET=1
-  curl https://mise.run | sh
-  "$MISE_SCRIPT_BIN" install
-  eval "$($MISE_SCRIPT_BIN activate bash)"
+    echo "Deploy mise"
+    export MISE_QUIET=1
+    curl https://mise.run | sh
+    "$MISE_SCRIPT_BIN" install
+    eval "$($MISE_SCRIPT_BIN activate bash)"
 fi
 
 # Check if the last plugin in the vim.pack.add list is installed
 if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fff.nvim" ]; then
-  echo "Install Neovim plugins"
-  nvim --headless "+qa"
+    echo "Install Neovim plugins"
+    nvim --headless "+qa"
 fi
 
 echo "Finished devcontainer setup"
