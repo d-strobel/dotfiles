@@ -3,7 +3,7 @@
 # changing this value.
 scale = 1.0
 # The icon theme to use for named icons.
-theme = "Hicolor"
+theme = "Adwaita"
 # Whether menus should stay open after clicking on an entry.
 keep-open = false
 
