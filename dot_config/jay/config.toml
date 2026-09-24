@@ -276,3 +276,15 @@ auto-focus = true
 [[windows]]
 match.title-regex = 'wants to open$'
 initial-tile-state = "floating"
+
+[[windows]]
+match.title-regex = 'Open folder as vault$'
+initial-tile-state = "floating"
+
+[[windows]]
+match.title-regex = 'Settings - obsidian'
+initial-tile-state = "floating"
+
+[[windows]]
+match.title-regex = 'Community plugins - obsidian'
+initial-tile-state = "floating"
