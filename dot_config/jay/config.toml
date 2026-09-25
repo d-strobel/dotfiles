@@ -251,10 +251,6 @@ capabilities = ["data-control"]
 
 # Window rules
 [[windows]]
-match.app-id = "org.pulseaudio.pavucontrol"
-initial-tile-state = "floating"
-
-[[windows]]
 match.title = "Picture in picture"
 initial-tile-state = "floating"
 auto-focus = false
@@ -266,25 +262,17 @@ auto-focus = false
 action = { type = "move-to-workspace", name = "_" }
 
 [[windows]]
-match.app-id = "engrampa"
-initial-tile-state = "floating"
-
-[[windows]]
 match.app-id = "imv"
 auto-focus = true
 
 [[windows]]
-match.title-regex = 'wants to open$'
-initial-tile-state = "floating"
-
-[[windows]]
-match.title-regex = 'Open folder as vault$'
-initial-tile-state = "floating"
-
-[[windows]]
-match.title-regex = 'Settings - obsidian'
-initial-tile-state = "floating"
-
-[[windows]]
-match.title-regex = 'Community plugins - obsidian'
+match.any = [
+    { app-id = "engrampa" },
+    { app-id = "org.pulseaudio.pavucontrol" },
+    { title-regex = 'wants to open$' },
+    { title-regex = 'Open folder as vault$' },
+    { title-regex = 'Settings - obsidian' },
+    { title-regex = 'Community plugins - obsidian' },
+    { title-regex = 'Removable medium is inserted' },
+]
 initial-tile-state = "floating"
