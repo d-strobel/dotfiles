@@ -285,9 +285,9 @@ match.any = [
 initial-tile-state = "floating"
 
 [[windows]]
-match.title = "Signal"
+match.app-id = "signal"
 action = { type = "move-to-workspace", name = "7" }
 
 [[windows]]
-match.title-regex = "Obsidian"
+match.app-id = "md.obsidian.Obsidian"
 action = { type = "move-to-workspace", name = "8" }
