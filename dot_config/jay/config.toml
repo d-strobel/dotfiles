@@ -231,6 +231,7 @@ show-window-icons = false
 # Colors
 captured-focused-title-bg-color = "#900000"
 captured-unfocused-title-bg-color = "#5f0000"
+attention-requested-bg-color = "#5d1264"
 
 # Fonts
 font = "JetBrainsMono Nerd Font 11"
