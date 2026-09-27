@@ -282,3 +282,11 @@ match.any = [
     { title-regex = 'Removable medium is inserted' },
 ]
 initial-tile-state = "floating"
+
+[[windows]]
+match.title = "Signal"
+action = { type = "move-to-workspace", name = "7" }
+
+[[windows]]
+match.title-regex = "Obsidian"
+action = { type = "move-to-workspace", name = "8" }
