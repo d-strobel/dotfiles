@@ -33,7 +33,7 @@ if status is-interactive
 
     # This should always be the last option.
     # Keychain integration
-    SHELL=fish eval (keychain --eval --timeout 720 --quiet id_ed25519)
+    SHELL=fish eval (keychain add --eval --quiet id_ed25519)
 end
 
 # Global variables
