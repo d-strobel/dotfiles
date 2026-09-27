@@ -17,7 +17,7 @@ case "$ACTION" in
         ;;
 esac
 
-VALUE=$(brightnessctl info | grep -oP '\(\K[0-9]+(?=%)')
+VALUE=$(brightnessctl info 2>/dev/null | grep -oP '\(\K[0-9]+(?=%)')
 
 notify-send -e \
     -h string:x-canonical-private-synchronous:brightness \
