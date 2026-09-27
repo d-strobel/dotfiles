@@ -64,6 +64,7 @@ accel-speed = -0.35
 match = [
     { name = "Synaptics TM3276-022" },
     { name = "TPPS/2 IBM TrackPoint" },
+    { name = "PIXA3854:00 093A:1343 Touchpad" },
 ]
 tap-enabled = true
 tap-drag-enabled = true
@@ -90,6 +91,11 @@ on-lid-opened = {
         enabled = true,
     },
 }
+
+# Framework notebook monitor
+[[outputs]]
+match = { connector = "eDP-1", product = "MND508ZB1-1" }
+scale = 1.5
 
 # Global shortcuts
 [shortcuts]
