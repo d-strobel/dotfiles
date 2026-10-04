@@ -113,13 +113,26 @@ end)
 -----------------------------
 --: Colorscheme
 -----------------------------
+local function apply_custom_highlights()
+  vim.api.nvim_set_hl(0, "FloatBorder", {
+    fg = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg,
+    bg = vim.api.nvim_get_hl(0, { name = "NormalFloat" }).bg,
+  })
+  vim.api.nvim_set_hl(0, "StatusLineMode", {
+    fg = "#cecece",
+    bg = "#333333",
+    bold = false,
+  })
+end
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = group,
+  callback = apply_custom_highlights,
+})
+apply_custom_highlights()
+
 vim.g.alabaster_dim_comments = true
 vim.cmd.colorscheme "alabaster"
-
-vim.api.nvim_set_hl(0, "FloatBorder", {
-  fg = vim.api.nvim_get_hl(0, { name = "LineNr" }).fg,
-  bg = vim.api.nvim_get_hl(0, { name = "NormalFloat" }).bg,
-})
 
 -----------------------------
 --: UI2
@@ -351,11 +364,6 @@ function _G.get_file_indentation()
   return string.format("%s:%d", indent, width)
 end
 
-vim.api.nvim_set_hl(0, "StatusLineMode", {
-  fg = vim.api.nvim_get_hl(0, { name = "FloatBorder" }).bg,
-  bg = vim.api.nvim_get_hl(0, { name = "PmenuSbar" }).bg,
-  bold = false,
-})
 vim.api.nvim_create_augroup('my-statusline', { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
   group = 'my-statusline',
