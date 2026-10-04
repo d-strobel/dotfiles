@@ -94,7 +94,7 @@ on-lid-opened = {
 
 # Framework notebook monitor
 [[outputs]]
-match = { connector = "eDP-1", product = "MND508ZB1-1" }
+match = { connector = "eDP-1" }
 scale = 1.5
 
 # Global shortcuts
