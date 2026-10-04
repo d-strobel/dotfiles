@@ -32,7 +32,6 @@ on-graphics-initialized = [
     { type = "exec", exec = "wl-tray-bridge" },
     { type = "exec", exec = "nm-applet" },
     { type = "exec", exec = "blueman-applet" },
-    { type = "exec", exec = ["foot", "--server"] },
 ]
 
 # Idle settings
@@ -112,7 +111,7 @@ logo-shift-k = "move-up"
 logo-shift-l = "move-right"
 
 # Direct launch
-logo-Return = { type = "exec", exec = "footclient" }
+logo-Return = { type = "exec", exec = "ghostty" }
 logo-space = { type = "exec", exec = "fuzzel" }
 
 # Misc
