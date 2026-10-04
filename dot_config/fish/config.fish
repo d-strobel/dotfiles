@@ -22,8 +22,11 @@ if status is-interactive
     # Direnv integration
     direnv hook fish | source
 
-    # Set fzf options
-    set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
+    # Fzf settings
+    set -Ux FZF_DEFAULT_OPTS "
+    --bind=ctrl-l:accept
+    --no-color
+    "
 
     # Fish keybinds
     bind \cj down-or-search

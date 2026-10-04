@@ -24,7 +24,10 @@ if status is-interactive
     set -gx FFF_FRECENCY_DB ~/.cache/nvim/fff_nvim
 
     # Fzf settings
-    set -gx FZF_DEFAULT_OPTS "--bind 'ctrl-l:accept'"
+    set -Ux FZF_DEFAULT_OPTS "
+    --bind=ctrl-l:accept
+    --no-color
+    "
 
     # Fish keybinds
     bind \cj down-or-search
