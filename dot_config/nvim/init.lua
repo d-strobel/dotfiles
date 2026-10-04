@@ -382,9 +382,8 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
 -- Highlight yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.hl_op()
-  end,
+  callback = function() vim.hl.on_yank() end,
+  -- callback = function() vim.hl.hl_op() end, -- Neovim >=0.13
 })
 
 -----------------------------
