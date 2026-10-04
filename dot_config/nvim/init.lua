@@ -352,8 +352,8 @@ function _G.get_file_indentation()
 end
 
 vim.api.nvim_set_hl(0, "StatusLineMode", {
-  fg = "#cecece",
-  bg = "#333333",
+  fg = vim.api.nvim_get_hl(0, { name = "FloatBorder" }).bg,
+  bg = vim.api.nvim_get_hl(0, { name = "PmenuSbar" }).bg,
   bold = false,
 })
 vim.api.nvim_create_augroup('my-statusline', { clear = true })
