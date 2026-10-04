@@ -1,0 +1,10 @@
+# vi: set ft=ini :
+mouse-hide-while-typing = true
+font-size = 18
+theme = light:Alabaster-Light,dark:Alabaster-Dark
+auto-update = off
+progress-style = true
+gtk-tabs-location = bottom
+cursor-color = cell-foreground
+cursor-style-blink = false
+shell-integration-features = sudo
