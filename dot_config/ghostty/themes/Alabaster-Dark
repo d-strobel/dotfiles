@@ -1,0 +1,25 @@
+# Alabaster Dark theme for Ghostty
+
+background = #0e1415
+foreground = #e7e7e7
+cursor-color = #e7e7e7
+cursor-text = #202020
+selection-background = #5f9dff
+selection-foreground = #e7e7e7
+
+palette = 0=#202020
+palette = 1=#ff7171
+palette = 2=#C3E88D
+palette = 3=#ffb45e
+palette = 4=#5f9dff
+palette = 5=#C792EA
+palette = 6=#89DDFF
+palette = 7=#e7e7e7
+palette = 8=#474747
+palette = 9=#FF5370
+palette = 10=#C3E88D
+palette = 11=#FFCB6B
+palette = 12=#82AAFF
+palette = 13=#C792EA
+palette = 14=#89DDFF
+palette = 15=#ffffff

@@ -1,0 +1,25 @@
+# Alabaster Light theme for Ghostty
+
+background = #f5f5f5
+foreground = #000000
+cursor-color = #000000
+cursor-text = #f5f5f5
+selection-background = #325CC0
+selection-foreground = #000000
+
+palette = 0=#000000
+palette = 1=#AA3731
+palette = 2=#448C27
+palette = 3=#9A6515
+palette = 4=#325CC0
+palette = 5=#811abc
+palette = 6=#4078a0
+palette = 7=#f5f5f5
+palette = 8=#777777
+palette = 9=#c04038
+palette = 10=#5da03a
+palette = 11=#b8860b
+palette = 12=#4a78d0
+palette = 13=#9932cc
+palette = 14=#5090b0
+palette = 15=#ffffff
