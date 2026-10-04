@@ -59,7 +59,7 @@ vim.opt.pumheight = 10
 vim.opt.autocomplete = true
 
 -- Non-Local systems
-if not vim.tbl_contains({ 'noxus', 'piltover' }, vim.loop.os_gethostname()) then
+if not vim.tbl_contains({ 'noxus', 'piltover', 'shurima' }, vim.loop.os_gethostname()) then
   vim.g.clipboard = "osc52"
 end
 
