@@ -93,6 +93,7 @@ vim.keymap.set("n", "<leader>u", vim.cmd.Undotree)                     -- Toggle
 vim.keymap.set("n", "<leader>gs", "<CMD>Git<CR>")                      -- Git Status
 vim.keymap.set("n", "<leader>gc", "<CMD>Git commit<CR>")               -- Git Commit
 vim.keymap.set("n", "<leader>gp", "<CMD>Git push<CR>")                 -- Git Push
+vim.keymap.set("n", "<leader>gb", "<CMD>Git blame<CR>")                -- Git Blame
 vim.keymap.set("v", "<leader>y", [["+y]])                              -- Copy to system clipboard
 vim.keymap.set("n", "<leader>yy", [["+yy]])                            -- Copy to system clipboard
 vim.keymap.set("n", "<leader>p", [["+p]])                              -- Paste from system clipboard
