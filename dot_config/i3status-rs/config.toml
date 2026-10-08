@@ -15,6 +15,18 @@ block = "privacy"
 name = "pipewire"
 
 [[block]]
+block = "custom"
+command = "microsandbox ls --quiet | wc -l"
+interval = 30
+format = " MSB: $text "
+
+[[block]]
+block = "custom"
+command = "podman ps --quiet | wc -l"
+interval = 30
+format = " Pod: $text "
+
+[[block]]
 block = "sound"
 driver = "pipewire"
 device_kind = "sink"
