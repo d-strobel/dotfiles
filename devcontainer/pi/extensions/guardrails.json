@@ -11,11 +11,15 @@
     "pathAccess": true
   },
   "pathAccess": {
-    "mode": "ask",
+    "mode": "allow",
     "allowedPaths": [
       {
         "kind": "file",
         "path": "/dev/null"
+      },
+      {
+        "kind": "directory",
+        "path": "/tmp"
       }
     ]
   },
