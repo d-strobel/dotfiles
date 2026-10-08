@@ -53,6 +53,7 @@ vim.opt.termguicolors = true
 vim.opt.winborder = 'single'
 vim.opt.path:append('**')
 vim.opt.wildoptions:append { 'fuzzy' }
+-- vim.o.autocomplete = true -- for Neovim 0.13
 vim.opt.complete = '.,w,b,u,o'
 vim.opt.completeopt = 'menuone,popup,noselect,fuzzy'
 vim.opt.pumheight = 10
