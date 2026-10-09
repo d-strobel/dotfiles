@@ -280,6 +280,7 @@ match.any = [
     { title-regex = 'Settings - obsidian' },
     { title-regex = 'Community plugins - obsidian' },
     { title-regex = 'Removable medium is inserted' },
+    { title-regex = 'Open File' },
 ]
 initial-tile-state = "floating"
 
