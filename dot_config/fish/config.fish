@@ -42,3 +42,5 @@ end
 # Global variables
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+set -gx DEVSY_DISABLE_TELEMETRY true
+set -gx DEVPOD_DISABLE_TELEMETRY true
