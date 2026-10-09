@@ -16,7 +16,7 @@ name = "pipewire"
 
 [[block]]
 block = "custom"
-command = "microsandbox ls --quiet | wc -l"
+command = "microsandbox ls --running --quiet | wc -l"
 interval = 30
 format = " MSB: $text "
 
