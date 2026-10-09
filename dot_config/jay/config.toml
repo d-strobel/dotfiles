@@ -291,3 +291,9 @@ action = { type = "move-to-workspace", name = "7" }
 [[windows]]
 match.app-id = "md.obsidian.Obsidian"
 action = { type = "move-to-workspace", name = "8" }
+
+[[windows]]
+match.app-id = "org.gnome.Calculator"
+initial-tile-state = "floating"
+initial-floating-size = { width = 400, height = 650 }
+initial-floating-position = { x = 1500, y = 250 }
