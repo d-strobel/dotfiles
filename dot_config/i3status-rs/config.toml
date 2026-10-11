@@ -18,7 +18,7 @@ name = "pipewire"
 block = "custom"
 command = "microsandbox ls --running --quiet | wc -l"
 interval = 30
-format = " MSB: $text "
+format = " SBX: $text "
 
 [[block]]
 block = "custom"
