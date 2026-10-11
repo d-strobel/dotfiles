@@ -19,6 +19,7 @@ vim.pack.add({
   { src = "https://github.com/tpope/vim-fugitive" },
   { src = "https://github.com/laytan/cloak.nvim" },
   { src = "https://github.com/mohseenrm/marko.nvim" },
+  { src = "https://github.com/stevearc/quicker.nvim" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/dmtrKovalenko/fff.nvim" },
 })
@@ -245,6 +246,11 @@ require("oil").setup({
   skip_confirm_for_simple_edits = true,
 })
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
+
+-----------------------------
+--: Quickfix
+-----------------------------
+require("quicker").setup()
 
 -----------------------------
 --: FFF
