@@ -4,3 +4,4 @@
 bun.lock
 node_modules
 package.json
+devcontainer-lock.json
