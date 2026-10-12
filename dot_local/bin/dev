@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# vi: set ft=sh
+
+devsy_up() {
+  devsy workspace up \
+  --ide "$DEVPOD_IDE" \
+  --dotfiles "$DEVPOD_DOTFILES" \
+  --dotfiles-script-env-file "$DEVPOD_WORKSPACE_ENV_FILE" \
+  --ssh-config "$DEVPOD_SSH_CONFIG" \
+  -v \
+  .
+}
+
+devsy_ssh() {
+  devsy workspace ssh .
+}
+
+# Check if devcontainer specs are present
+if ! [[ -e "./.devcontainer.json" || -e "./.devcontainer/devcontainer.json"  ]]; then
+  echo "No devcontainer specs present"
+  exit 1
+fi
+
+# Check devsy workspace status
+if ! devsy_workspace_status=$(devsy workspace status --result-format plain . 2>/dev/null); then
+  devsy_up
+  devsy_ssh
+  exit 0
+fi
+
+# Handle workspace status cases
+case "$devsy_workspace_status" in
+  Running)
+    devsy_ssh
+    ;;
+  Stopped)
+    devsy_up
+    devsy_ssh
+    ;;
+  *)
+    echo "Unknown Devsy workspace status: $devsy_workspace_status"
+    exit 1
+    ;;
+esac
+
+exit 0
