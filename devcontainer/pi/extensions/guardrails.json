@@ -12,29 +12,53 @@
   },
   "pathAccess": {
     "mode": "allow",
-    "allowedPaths": [
-      {
-        "kind": "file",
-        "path": "/dev/null"
-      },
-      {
-        "kind": "directory",
-        "path": "/tmp"
-      }
-    ]
+    "allowedPaths": []
   },
   "policies": {
     "rules": [
       {
-        "id": "example-secret-env-files",
-        "name": "Secret env files",
-        "description": "Block .env files and variants",
+        "id": "secret-files",
+        "name": "Secret env and vault files",
+        "description": "Block dotenv, direnv, and common vault/secret files",
         "patterns": [
           {
             "pattern": ".env"
           },
           {
             "pattern": ".env.*"
+          },
+          {
+            "pattern": ".envrc"
+          },
+          {
+            "pattern": ".envrc.*"
+          },
+          {
+            "pattern": ".direnv/**"
+          },
+          {
+            "pattern": "vault.yml"
+          },
+          {
+            "pattern": "vault.yaml"
+          },
+          {
+            "pattern": "*.vault.yml"
+          },
+          {
+            "pattern": "*.vault.yaml"
+          },
+          {
+            "pattern": "secrets.yml"
+          },
+          {
+            "pattern": "secrets.yaml"
+          },
+          {
+            "pattern": "*.secrets.yml"
+          },
+          {
+            "pattern": "*.secrets.yaml"
           }
         ],
         "allowedPatterns": [
@@ -42,7 +66,43 @@
             "pattern": ".env.example"
           },
           {
+            "pattern": ".env.sample"
+          },
+          {
+            "pattern": ".env.test"
+          },
+          {
+            "pattern": "*.example.env"
+          },
+          {
             "pattern": "*.sample.env"
+          },
+          {
+            "pattern": "*.test.env"
+          },
+          {
+            "pattern": "vault.example.yml"
+          },
+          {
+            "pattern": "vault.example.yaml"
+          },
+          {
+            "pattern": "vault.sample.yml"
+          },
+          {
+            "pattern": "vault.sample.yaml"
+          },
+          {
+            "pattern": "secrets.example.yml"
+          },
+          {
+            "pattern": "secrets.example.yaml"
+          },
+          {
+            "pattern": "secrets.sample.yml"
+          },
+          {
+            "pattern": "secrets.sample.yaml"
           }
         ],
         "protection": "noAccess",
@@ -50,27 +110,7 @@
         "enabled": true
       },
       {
-        "id": "example-regex-env",
-        "name": "Regex env files",
-        "description": "Regex example for env files",
-        "patterns": [
-          {
-            "pattern": "^\\.env(\\..+)?$",
-            "regex": true
-          }
-        ],
-        "allowedPatterns": [
-          {
-            "pattern": "^\\.env\\.example$",
-            "regex": true
-          }
-        ],
-        "protection": "noAccess",
-        "onlyIfExists": true,
-        "enabled": true
-      },
-      {
-        "id": "example-ssh-keys",
+        "id": "ssh-keys",
         "name": "SSH keys",
         "description": "Block SSH private key files",
         "patterns": [
@@ -94,7 +134,7 @@
         "enabled": true
       },
       {
-        "id": "example-k8s-secrets",
+        "id": "k8s-secrets",
         "name": "Kubernetes secrets",
         "description": "Block kubectl config and secrets",
         "patterns": [
@@ -110,7 +150,7 @@
         "enabled": true
       },
       {
-        "id": "example-certificates",
+        "id": "certificates",
         "name": "Certificates",
         "description": "Block certificate and key files",
         "patterns": [
@@ -140,6 +180,10 @@
       {
         "pattern": "docker inspect",
         "description": "Docker inspect (may expose env vars)"
+      },
+      {
+        "pattern": "podman inspect",
+        "description": "Podman inspect (may expose env vars)"
       },
       {
         "pattern": "terraform apply",
