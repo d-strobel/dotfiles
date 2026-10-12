@@ -11,7 +11,6 @@
   "packages": [
     "npm:@ff-labs/pi-fff",
     "npm:@aliou/pi-guardrails",
-    "npm:@tmustier/pi-usage-extension",
     "npm:pi-btw",
     "npm:pi-web-access",
     "npm:pi-subagents"
