@@ -1,10 +1,10 @@
 {
   "theme": "light/dark",
   "quietStartup": "header",
-  "defaultThinkingLevel": "low",
+  "defaultThinkingLevel": "medium",
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
-  "hideThinkingBlock": false,
+  "hideThinkingBlock": true,
   "npmCommand": [
     "bun",
     "add"
