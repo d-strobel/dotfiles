@@ -1,5 +1,6 @@
 {
   "theme": "light/dark",
+  "quietStartup": "header",
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
