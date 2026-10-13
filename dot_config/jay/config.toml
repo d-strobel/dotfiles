@@ -250,6 +250,7 @@ enabled = false
 # Privileged clients
 [[clients]]
 match.any = [
+    { comm = "wl-clip-persist" },
     { comm = "wl-copy" },
     { comm = "wl-paste" },
 ]
