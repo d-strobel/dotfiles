@@ -1,3 +1,6 @@
+[settings]
+npm.package_manager = "bun"
+
 [tools]
 neovim = "latest"
 fzf = "latest"
