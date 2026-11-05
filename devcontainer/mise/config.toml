@@ -9,4 +9,6 @@ zoxide = "latest"
 tree-sitter = "latest"
 pi = "latest"
 bun = "latest"
+node = "latest"
 "github:matkrin/md-lsp" = "latest"
+"npm:yaml-language-server" = { version = "latest", depends = ["bun"] }
