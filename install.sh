@@ -52,6 +52,7 @@ ensure_symlink "$DOTFILES_SOURCE_PATH/dot_config/git/ignore" "$HOME/.config/git/
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/extensions" "$HOME/.pi/agent/extensions"
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/keybindings.json" "$HOME/.pi/agent/keybindings.json"
 ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/settings.json" "$HOME/.pi/agent/settings.json"
+ensure_symlink "$DOTFILES_SOURCE_PATH/devcontainer/pi/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"
 
 # Global git config
 if [[ -n "${GIT_USER_NAME:-}" ]]; then
