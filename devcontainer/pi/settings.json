@@ -10,7 +10,6 @@
     "add"
   ],
   "packages": [
-    "npm:@ff-labs/pi-fff",
     "npm:@aliou/pi-guardrails",
     "npm:pi-btw",
     "npm:pi-web-access",

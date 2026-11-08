@@ -74,7 +74,7 @@ if [ ! -x "$MISE_SCRIPT_BIN" ]; then
 fi
 
 # Check if the last plugin in the vim.pack.add list is installed
-if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fff.nvim" ]; then
+if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fzf-lua" ]; then
     echo "Install Neovim plugins"
     nvim --headless "+qa"
 fi

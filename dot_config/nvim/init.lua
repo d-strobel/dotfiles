@@ -1,16 +1,6 @@
 -----------------------------
 --: Plugins
 -----------------------------
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if name == 'fff.nvim' and (kind == 'install' or kind == 'update') then
-      if not ev.data.active then vim.cmd.packadd('fff.nvim') end
-      require('fff.download').download_or_build_binary()
-    end
-  end,
-})
-
 vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/neovim/nvim-lspconfig.git" },
@@ -21,7 +11,6 @@ vim.pack.add({
   { src = "https://github.com/mohseenrm/marko.nvim" },
   { src = "https://github.com/stevearc/quicker.nvim" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
-  { src = "https://github.com/dmtrKovalenko/fff.nvim" },
 })
 vim.cmd.packadd("nvim.undotree")
 vim.cmd.packadd('nvim.difftool')
@@ -253,30 +242,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
 require("quicker").setup()
 
 -----------------------------
---: FFF
------------------------------
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function(args)
-    vim.opt.autocomplete = vim.bo[args.buf].filetype ~= "fff_input"
-  end,
-})
-
-vim.g.fff = {
-  prompt = '> ',
-  layout = { prompt_position = 'top' },
-  preview = { enabled = false },
-  keymaps = {
-    select = { '<CR>', '<C-l>' },
-    move_up = { '<Up>', '<C-p>', '<C-k>' },
-    move_down = { '<Down>', '<C-n>', '<C-j>' },
-    cycle_grep_modes = '<S-Tab>',
-    send_to_quickfix = { '<C-q>', '<M-q>' },
-  },
-}
-vim.keymap.set('n', '<leader>f', function() require('fff').find_files() end)
-vim.keymap.set('n', '<leader>l', function() require('fff').live_grep() end)
-
------------------------------
 --: Fzf
 -----------------------------
 require('fzf-lua').setup({
@@ -293,6 +258,8 @@ require('fzf-lua').setup({
     },
   },
 })
+vim.keymap.set("n", "<leader>f", FzfLua.files)
+vim.keymap.set("n", "<leader>l", FzfLua.live_grep)
 vim.keymap.set("n", "<leader>b", FzfLua.buffers)
 vim.keymap.set("n", "<leader>m", FzfLua.marks)
 vim.keymap.set("n", "<leader>h", FzfLua.helptags)
@@ -376,18 +343,13 @@ vim.api.nvim_create_augroup('my-statusline', { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
   group = 'my-statusline',
   callback = function(args)
-    if vim.bo[args.buf].filetype ~= "fff_input" then
-      vim.wo.statusline =
-      '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %{&fileformat} %#StatusLineMode# %{&filetype} %#StatusLine#'
-    end
+      vim.wo.statusline = '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %{&fileformat} %#StatusLineMode# %{&filetype} %#StatusLine#'
   end,
 })
 vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
   group = 'my-statusline',
   callback = function(args)
-    if vim.bo[args.buf].filetype ~= "fff_input" then
       vim.wo.statusline = '%= %<%t %h%w%m%r %='
-    end
   end,
 })
 
@@ -412,7 +374,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
     -- Keymaps
-    -- vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end)
 
     -- Completion

@@ -20,8 +20,6 @@ if status is-interactive
 
     # Pi settings
     set -gx PI_SKIP_VERSION_CHECK 1
-    set -gx PI_FFF_MODE override
-    set -gx FFF_FRECENCY_DB ~/.cache/nvim/fff_nvim
 
     # Fzf settings
     set -Ux FZF_DEFAULT_OPTS "

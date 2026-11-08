@@ -4,11 +4,15 @@ npm.package_manager = "bun"
 [tools]
 neovim = "latest"
 fzf = "latest"
+fd = "latest"
+ripgrep = "latest"
 direnv = "latest"
 zoxide = "latest"
 tree-sitter = "latest"
 pi = "latest"
 bun = "latest"
 node = "latest"
+uv = "latest"
+"pypi:graphifyy" = { version = "latest", depends = ["uv"] }
 "github:matkrin/md-lsp" = "latest"
 "npm:yaml-language-server" = { version = "latest", depends = ["bun"] }
