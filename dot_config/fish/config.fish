@@ -20,7 +20,7 @@ if status is-interactive
     zoxide init fish --cmd cd | source
 
     # Direnv integration
-    direnv hook fish | source
+    direnv-instant hook fish | source
 
     # Fzf settings
     set -Ux FZF_DEFAULT_OPTS "
