@@ -137,6 +137,7 @@ require('vim._core.ui2').enable({ enable = true })
 vim.filetype.add({
   extension = {
     -- Terraform
+    tf = "terraform",
     tfbackend = "config",
     tfstate = "json",
     -- Jinja
