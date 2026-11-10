@@ -259,8 +259,7 @@ require('fzf-lua').setup({
     },
   },
 })
-vim.keymap.set("n", "<leader>a", FzfLua.files)
-vim.keymap.set("n", "<leader>f", FzfLua.vcs_files)
+vim.keymap.set("n", "<leader>f", FzfLua.files)
 vim.keymap.set("n", "<leader>l", FzfLua.live_grep)
 vim.keymap.set("n", "<leader>b", FzfLua.buffers)
 vim.keymap.set("n", "<leader>m", FzfLua.marks)
