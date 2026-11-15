@@ -247,7 +247,15 @@ require("quicker").setup()
 -----------------------------
 require('fzf-lua').setup({
   winopts = { preview = { horizontal = "right:40%" } },
-  files = { previewer = false, cwd_prompt = false },
+  files = {
+    previewer  = false,
+    cwd_prompt = false,
+    fd_opts    = [[--color=never --type f --type l --exclude .git --exclude node_modules --exclude graphify-out ]],
+  },
+  grep = {
+    rg_opts =
+    [[--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -g "!node_modules" -g "!graphify-out" -e]],
+  },
   buffers = { previewer = false },
   marks = { marks = "[A-Z]", actions = { ["ctrl-l"] = FzfLua.actions.goto_mark } },
   fzf_colors = true,
