@@ -443,6 +443,18 @@ vim.lsp.config("md_lsp", {
   filetypes = { "markdown" },
   root_markers = { ".git" },
   single_file_support = true,
+
+  handlers = {
+    ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+      if result and result.diagnostics then
+        result.diagnostics = vim.tbl_filter(function(diagnostic)
+          return diagnostic.code ~= 3
+        end, result.diagnostics)
+      end
+
+      return vim.lsp.handlers["textDocument/publishDiagnostics"](err, result, ctx, config)
+    end,
+  },
 })
 
 vim.lsp.config("tofu_ls", {
