@@ -344,13 +344,14 @@ vim.api.nvim_create_augroup('my-statusline', { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
   group = 'my-statusline',
   callback = function(args)
-      vim.wo.statusline = '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %{&fileformat} %#StatusLineMode# %{&filetype} %#StatusLine#'
+    vim.wo.statusline =
+    '%#StatusLineMode# <%{toupper(mode())}> %#StatusLine# %= %<%t %h%w%m%r %= [%l,%c] %{v:lua.get_file_indentation()} %{&fileencoding} %{&fileformat} %#StatusLineMode# %{&filetype} %#StatusLine#'
   end,
 })
 vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
   group = 'my-statusline',
   callback = function(args)
-      vim.wo.statusline = '%= %<%t %h%w%m%r %='
+    vim.wo.statusline = '%= %<%t %h%w%m%r %='
   end,
 })
 
