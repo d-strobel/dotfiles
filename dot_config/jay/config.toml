@@ -32,6 +32,7 @@ on-graphics-initialized = [
     { type = "exec", exec = "wl-tray-bridge" },
     { type = "exec", exec = "nm-applet" },
     { type = "exec", exec = "blueman-applet" },
+    { type = "exec", exec = ["handy", "--start-hidden"] },
 ]
 
 # Idle settings
@@ -219,6 +220,17 @@ logo-shift-Return = {
     },
 }
 
+# Push-to-talk for voice-to-text
+[complex-shortcuts.alt-t]
+action = {
+    type = "exec",
+    exec = ["handy", "--toggle-transcription"],
+}
+latch = {
+    type = "exec",
+    exec = ["handy", "--toggle-transcription"],
+}
+
 [theme]
 border-width = 2
 bar-position = "top"
@@ -255,6 +267,10 @@ match.any = [
     { comm = "wl-paste" },
 ]
 capabilities = ["data-control"]
+
+[[clients]]
+match.comm = "wtype"
+capabilities = "virtual-keyboard"
 
 # Window rules
 [[windows]]
