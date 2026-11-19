@@ -221,7 +221,7 @@ logo-shift-Return = {
 }
 
 # Push-to-talk for voice-to-text
-[complex-shortcuts.alt-t]
+[complex-shortcuts.alt-y]
 action = {
     type = "exec",
     exec = ["handy", "--toggle-transcription"],
