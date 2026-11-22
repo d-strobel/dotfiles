@@ -5,10 +5,7 @@
   "enableInstallTelemetry": false,
   "defaultProjectTrust": "always",
   "hideThinkingBlock": true,
-  "npmCommand": [
-    "bun",
-    "add"
-  ],
+  "npmCommand": ["bun"],
   "packages": [
     "npm:@aliou/pi-guardrails",
     "npm:pi-btw",
