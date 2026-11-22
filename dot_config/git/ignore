@@ -1,7 +1,5 @@
 # vi: set ft=gitignore :
 
 .pi-subagents
-bun.lock
 node_modules
-package.json
 devcontainer-lock.json
