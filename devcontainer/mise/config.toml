@@ -14,5 +14,6 @@ bun = "latest"
 node = "latest"
 uv = "latest"
 "pypi:graphifyy" = { version = "latest", depends = ["uv"] }
+"pypi:anyio" = { version = "latest", depends = ["uv"] }
 "github:matkrin/md-lsp" = "latest"
 "npm:yaml-language-server" = { version = "latest", depends = ["bun"] }
