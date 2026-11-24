@@ -80,4 +80,10 @@ if [ ! -d "$HOME/.local/share/nvim/site/pack/core/opt/fzf-lua" ]; then
     nvim --headless "+qa"
 fi
 
+# Install Graphify Pi skill if not already installed
+if [ ! -f "$HOME/.pi/agent/skills/graphify/SKILL.md" ]; then
+    echo "Installing Graphify Pi skill"
+    graphify install --platform pi >/dev/null
+fi
+
 echo "Finished devcontainer setup"
