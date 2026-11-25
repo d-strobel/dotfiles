@@ -83,7 +83,7 @@ fi
 # Install Graphify Pi skill if not already installed
 if [ ! -f "$HOME/.pi/agent/skills/graphify/SKILL.md" ]; then
     echo "Installing Graphify Pi skill"
-    graphify install --platform pi >/dev/null
+    graphify pi install
 fi
 
 echo "Finished devcontainer setup"
